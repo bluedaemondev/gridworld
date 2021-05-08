@@ -11,12 +11,21 @@ namespace Entities
         [SerializeField] private Animator _animator;
         [SerializeField] private BoxCollider attackArea;
 
+        [SerializeField] private string attackAnimationName = "attack";
+
         /// <summary>
         /// Metodo para animation
         /// </summary>
+        public void AttackEvent()
+        {
+            if (!_health.IsDead())
+                this.attackArea.enabled = !this.attackArea.enabled;
+            else
+                this.attackArea.enabled = false;
+        }
         public void Attack()
         {
-            this.attackArea.enabled = !this.attackArea.enabled;
+            this._animator.Play(attackAnimationName);
         }
 
         public void Init()
