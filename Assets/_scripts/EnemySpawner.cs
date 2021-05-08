@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemy()
     {
         var nEnemy = Enemy.InstantiateEnemy(transform.position, Quaternion.identity, LevelManager.instance.enemiesContainer);
-        nEnemy.Init()
+        nEnemy.Init();
     }
     public void RemoveEnemy()
     {
