@@ -11,8 +11,7 @@ public class PlatformerMovementController : MonoBehaviour
     public string jumpButton = "Jump";
     public float jumpForce = 10f;
     public ForceMode jumpForceMode = ForceMode.VelocityChange;
-    public string attackButton = "Fire1";
-    public string attackTriggerName = "Attack";
+    
     public Rigidbody myRigidbody;
     private float horizontalInput;
     private Vector3 inputVector;
@@ -69,10 +68,10 @@ public class PlatformerMovementController : MonoBehaviour
             }
 
 
-            if (Input.GetButtonDown(attackButton))
-            {
-                animator.SetTrigger(attackTriggerName);
-            }
+            //if (Input.GetButtonDown(attackButton))
+            //{
+            //    animator.SetTrigger(attackTriggerName);
+            //}
         }
     }
 
