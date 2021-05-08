@@ -1319,6 +1319,7 @@ GameObject:
   - component: {fileID: 2010296402748551543}
   - component: {fileID: 3465158046393595800}
   - component: {fileID: 3465158046393595803}
+  - component: {fileID: -4423671247206156489}
   m_Layer: 0
   m_Name: chaserragdoll Prefab
   m_TagString: Untagged
@@ -1400,6 +1401,22 @@ MonoBehaviour:
   animator: {fileID: 2010296402748551543}
   walkingBoolName: isWalking
   delay: 0.5
+--- !u!114 &-4423671247206156489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4843441028370329118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07348fcd2084e64e8ac152c5ecc82ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodPrefab: {fileID: 0}
+  _animator: {fileID: 2010296402748551543}
+  attackArea: {fileID: 0}
+  _chaser: {fileID: 3465158046393595803}
 --- !u!1 &4951535728857590646
 GameObject:
   m_ObjectHideFlags: 0

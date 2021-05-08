@@ -24,9 +24,20 @@ public class Enemy : Entity, IAttacker, IMovable
     {
         this._health = new Health(50);
 
-        this.attackArea.enabled = false;
-        _chaser = GetComponent<TargetChaser>();
-        _chaser.StartChasingTarget();
+        if (attackArea != null)
+            this.attackArea.enabled = false;
+
+        if (_chaser == null)
+            _chaser = GetComponent<TargetChaser>();
+        
+
+        _chaser.StartChasingTarget(LevelManager.instance.player);
+    }
+
+    public override void Start()
+    {
+        base.Start();
+        Init();
     }
 
     public override float TakeDamage(float value)

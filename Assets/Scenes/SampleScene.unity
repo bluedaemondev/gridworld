@@ -4798,6 +4798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assets: {fileID: 11400000, guid: a149e7bad3d494743b3240ee0826629f, type: 2}
   enemiesContainer: {fileID: 389056723}
+  player: {fileID: 2061848156}
 --- !u!43 &1839568092
 Mesh:
   m_ObjectHideFlags: 0
@@ -5457,3 +5458,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 949741210}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2061848160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061848154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0863d88155c7f4041ae0afeff94ffc87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodPrefab: {fileID: 0}
+  _animator: {fileID: 2061848159}
+  attackArea: {fileID: 1885254788}

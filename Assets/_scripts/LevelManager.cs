@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public EntityLibrarySO assets;
 
     public Transform enemiesContainer;
+    public Transform player;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,10 @@ public class LevelManager : MonoBehaviour
         }
 
         instance = this;
+
+
+        if (!player)
+            player = FindObjectOfType<Entities.Player>().transform;
     }
 
     
