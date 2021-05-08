@@ -9,7 +9,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Sound Library", menuName ="Sound Library", order = 0)]
 public class SoundLibrarySO : ScriptableObject
 {
-    public AudioClip unlockZoneAlert;
-    // agregar los sonidos generales de escena
+    public AudioClip musicLevelLoop;
+
+    public AudioClip attackSoundPlayer;
+    public AudioClip explosionSound;
+    public AudioClip stepPlayer;
+    public AudioClip spawnEnemy;
+
+    public AudioClip winSound;
+    public AudioClip loseSound;
 
 }

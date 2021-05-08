@@ -2,17 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+/// <summary>
+/// entidad base para player, enemigos y spawns
+/// </summary>
+
+public abstract class Entity : MonoBehaviour , IDamageable
 {
-    // Start is called before the first frame update
-    void Start()
+    protected Health _health;
+    protected Rigidbody _myRigidbody;
+
+    public virtual void Start()
     {
-        
+        _health = new Health(100);
+        _myRigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Die()
     {
-        
+        Debug.Log("Dying");
     }
+
+    public virtual float TakeDamage(float value)
+    {
+        Debug.Log("Taking dmg " + value);
+        if(0 >= this._health.TakeDamage(value))
+        {
+            this.Die();
+        }
+
+        return this._health.GetHealth();
+    }
+
+    
+
 }

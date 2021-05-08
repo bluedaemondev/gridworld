@@ -3,61 +3,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : IDamageable
 {
     public event EventHandler OnHealthChanged;
     public event EventHandler OnDamaged;
     public event EventHandler OnHealed;
     public event EventHandler OnDead;
 
-    private int healthMax = 100;
-    private int health;
+    private float healthMax = 100;
+    private float health;
 
-    public GameObject bloodPrefab;
-
-    private void Start()
+    //default -> flag use max
+    public Health(float healthMax, float currentHealth = -1)
     {
-        health = healthMax;
-
-
+        this.healthMax = healthMax;
+        health = currentHealth > -1 ? currentHealth : healthMax;
     }
 
-    public int GetMaxLife()
+    public float GetHealth()
     {
-        return this.healthMax;
+        return health;
     }
-
     public float GetHealthNormalized()
     {
-        return (float)health / healthMax;
+        return health / healthMax;
     }
 
-    public void Damage(int amount)
+    public float TakeDamage(float amount)
     {
         health -= amount;
-        if (health < 0)
-        {
-            health = 0;
-        }
+
         OnHealthChanged?.Invoke(this, EventArgs.Empty);
         OnDamaged?.Invoke(this, EventArgs.Empty);
-
-        EffectFactory.instance.InstantiateEffectAt(bloodPrefab, transform.position, Quaternion.identity);
-        //FindObjectOfType<CameraShake>().ShakeCameraNormal(8, 0.3f);
-
-        if (health <= 0)
+        
+        if (IsDead())
         {
             Die();
-            //FindObjectOfType<CameraShake>().ShakeCameraNormal(2, 2f);
-
         }
+
+        return this.health;
     }
 
     public void Die()
     {
         OnDead?.Invoke(this, EventArgs.Empty);
-        SendMessage("OnDie");
-
     }
 
     public bool IsDead()

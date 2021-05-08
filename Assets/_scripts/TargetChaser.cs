@@ -11,8 +11,16 @@ public class TargetChaser : MonoBehaviour
     [SerializeField] private string walkingBoolName = "isWalking";
     [SerializeField] private float delay = 0.5f;
 
-    void Start()
+    //void Start()
+    //{
+    //    StartCoroutine(Chase());
+    //}
+
+    public void StartChasingTarget(Transform _target = null)
     {
+        if (_target != null)
+            this.target = _target;
+
         StartCoroutine(Chase());
     }
 
