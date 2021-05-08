@@ -59,7 +59,7 @@ public class PlatformerMovementController : MonoBehaviour
                 currentTimerJumpCommand = jumpCommandGracePeriod;
                 var pendingJump = currentTimerJumpCommand > 0;
                 var grounded = Physics.OverlapBox(transform.position, transform.localScale*0.5f, Quaternion.identity, groundLayer);
-                Debug.Log("grounded " + grounded.Length);
+                //Debug.Log("grounded " + grounded.Length);
                 
                 if (grounded.Length > 0 && pendingJump)
                 {

@@ -8,11 +8,15 @@ public class EnemySpawner : MonoBehaviour
     private static int enemiesInPool = 0;
 
     [SerializeField] private float spawnAfter = 3f;
+    
     public void SpawnEnemy()
     {
         var nEnemy = Enemy.InstantiateEnemy(transform.position, Quaternion.identity, LevelManager.instance.enemiesContainer);
         nEnemy.Init();
+        enemiesInPool++;
+
     }
+
     public void RemoveEnemy()
     {
         if (enemiesInPool > 0)
@@ -23,20 +27,14 @@ public class EnemySpawner : MonoBehaviour
     {
         while(enemiesInPool < maxEnemiesPool)
         {
-            Enemy.InstantiateEnemy(transform.position, Quaternion.identity, LevelManager.instance.enemiesContainer);
+            SpawnEnemy();
             yield return new WaitForSecondsRealtime(spawnAfter);
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(SpawnCyclic());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

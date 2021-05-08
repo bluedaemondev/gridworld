@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Chasing enemy
+/// </summary>
 public class Enemy : Entity, IAttacker, IMovable
 {
     public static Enemy InstantiateEnemy(Vector3 position, Quaternion rot, Transform enemyContainerScene)
@@ -14,12 +17,15 @@ public class Enemy : Entity, IAttacker, IMovable
     [SerializeField] private GameObject bloodPrefab;
     [SerializeField] private Animator _animator;
     [SerializeField] private BoxCollider attackArea;
-    
-    [SerializeField] private TargetChaser _chaser;
 
+    [SerializeField] private TargetChaser _chaser;
 
     public void Init()
     {
+        this._health = new Health(50);
+
+        this.attackArea.enabled = false;
+        _chaser = GetComponent<TargetChaser>();
         _chaser.StartChasingTarget();
     }
 
@@ -32,6 +38,7 @@ public class Enemy : Entity, IAttacker, IMovable
 
     public void Move()
     {
+        // refference chase behaviour
         throw new NotImplementedException();
     }
 

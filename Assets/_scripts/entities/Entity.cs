@@ -13,7 +13,7 @@ public abstract class Entity : MonoBehaviour , IDamageable
 
     public virtual void Start()
     {
-        _health = new Health(100);
+        //_health = new Health(100); //===> pisar por cada tipo de entidad creando su vida desde la instancia
         _myRigidbody = GetComponent<Rigidbody>();
     }
 
