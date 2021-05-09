@@ -11,7 +11,9 @@ namespace Entities
         [SerializeField] private Animator _animator;
         [SerializeField] private BoxCollider attackArea;
 
-        [SerializeField] private string attackAnimationName = "attack";
+        [SerializeField] private string attackAnimationName = "Attack";
+        public string attackButton = "Fire1";
+        //public string attackTriggerName = "Attack";
 
         /// <summary>
         /// Metodo para animation
@@ -44,7 +46,10 @@ namespace Entities
         // Update is called once per frame
         void Update()
         {
-
+            if (Input.GetButtonDown(attackButton))
+            {
+                Attack();
+            }
         }
     }
 }
