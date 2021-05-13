@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using System;
 
 namespace Entities
 {
@@ -50,6 +51,11 @@ namespace Entities
             {
                 Attack();
             }
+        }
+
+        public void SetAnimState(string animatorStateName, bool value)
+        {
+            this._animator.SetBool(animatorStateName, value);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : Entity
 {
     private static int maxEnemiesPool = 20;
     private static int enemiesInPool = 0;
