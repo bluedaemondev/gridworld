@@ -69,13 +69,17 @@ public class LevelManager : MonoBehaviour
         instance = this;
 
 
+        
+    }
+    private void Start()
+    {
         if (!player)
             player = FindObjectOfType<Entities.Player>().transform;
         if (!mapManager)
             mapManager = FindObjectOfType<MapManager>();
         if (aliveEnemies == null)
             aliveEnemies = new List<Entity>();
-        
+
         mapManager.Init();
         cronometer.Init(timeTicker);
 
