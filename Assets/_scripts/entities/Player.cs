@@ -94,6 +94,8 @@ namespace Entities
         public override void Die()
         {
             base.Die();
+            healthBar.SetHealth(0);
+
             this._animator.SetTrigger(dieTrigger);
             this._animator.Play(dyingAnimationName);
             controller.canMove = false;
