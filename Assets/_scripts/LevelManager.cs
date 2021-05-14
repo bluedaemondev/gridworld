@@ -23,7 +23,33 @@ public class LevelManager : MonoBehaviour
     public event Action onLose;
     public event Action onWin;
 
-    List<Entity> aliveEnemies;
+    [SerializeField] private List<Entity> aliveEnemies;
+
+    /// <summary>
+    /// win condition - destroy everyone
+    /// </summary>
+    /// <param name="entity"></param>
+    public void RemoveEnemyFromAccountance(Entity entity)
+    {
+        if (aliveEnemies.Contains(entity))
+        {
+            Debug.Log("removing " + entity.name);
+            aliveEnemies.Remove(entity);
+
+            if(aliveEnemies.Count == 0)
+            {
+                Win();
+            }
+        }
+    }
+    public void SubscribeAliveEntity(Entity entity)
+    {
+        if (!aliveEnemies.Contains(entity))
+        {
+            Debug.Log("adding " + entity.name);
+            aliveEnemies.Add(entity);
+        }
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -40,16 +66,20 @@ public class LevelManager : MonoBehaviour
             player = FindObjectOfType<Entities.Player>().transform;
         if (!mapManager)
             mapManager = FindObjectOfType<MapManager>();
+        if (aliveEnemies == null)
+            aliveEnemies = new List<Entity>();
         
         mapManager.Init();
         cronometer.Init(timeTicker);
 
         onLose += RestartOnLose;
+        onWin += PauseGame;
     }
     public void Win()
     {
-        if(onWin != null && aliveEnemies.Count == 0)
+        if(onWin != null)
         {
+            Debug.Log("Win!");
             hudManager.DisplayWin();
             onWin.Invoke();
         }
@@ -72,5 +102,12 @@ public class LevelManager : MonoBehaviour
     {
         yield return new WaitForSeconds(t);
         sceneManager.ReLoadSync();
+    }
+    public void PauseGame()
+    {
+        if (Time.timeScale == 0.1f)
+            Time.timeScale = 1;
+        else
+            Time.timeScale = 0.1f;
     }
 }

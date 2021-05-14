@@ -72,6 +72,8 @@ public class EnemySpawner : Entity
     {
         this._health = new Health(400);
         this._animator = GetComponent<Animator>();
+        LevelManager.instance.SubscribeAliveEntity(this);
+
         StartCoroutine(SpawnCyclic());
     }
     public override float TakeDamage(float value)
@@ -86,5 +88,7 @@ public class EnemySpawner : Entity
         base.Die();
         this._animator.SetTrigger("die");
         this._animator.Play(dyingAnimationName);
+
+        LevelManager.instance.RemoveEnemyFromAccountance(this);
     }
 }

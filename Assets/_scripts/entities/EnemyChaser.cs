@@ -45,6 +45,8 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 
         //DisableRagdollPhysics();
 
+        LevelManager.instance.SubscribeAliveEntity(this);
+
         _chaser.Init(this);
         _chaser.StartChasingTarget(LevelManager.instance.player);
     }
@@ -71,6 +73,8 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     {
         base.Die();
         this._animator.SetTrigger("die");
+        LevelManager.instance.RemoveEnemyFromAccountance(this);
+
 
         EnableRagdollPhysics();
     }

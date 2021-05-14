@@ -18,9 +18,7 @@ public class EnemyShooter : Entity, IRagdoll
     public void Init()
     {
         this._health = new Health(50);
-
-        //DisableRagdollPhysics();
-
+        LevelManager.instance.SubscribeAliveEntity(this);
     }
 
     public override void Start()
@@ -38,6 +36,8 @@ public class EnemyShooter : Entity, IRagdoll
     {
         base.Die();
         this._animator.SetTrigger("die");
+        LevelManager.instance.RemoveEnemyFromAccountance(this);
+
     }
 
     public void EnableRagdollPhysics()
