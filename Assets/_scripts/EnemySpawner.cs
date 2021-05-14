@@ -11,7 +11,7 @@ public class EnemySpawner : Entity
     
     public void SpawnEnemy()
     {
-        var nEnemy = Enemy.InstantiateEnemy(transform.position, Quaternion.identity, LevelManager.instance.enemiesContainer);
+        var nEnemy = EnemyChaser.InstantiateEnemy(transform.position, Quaternion.identity, LevelManager.instance.enemiesContainer);
         nEnemy.Init();
         enemiesInPool++;
 
@@ -32,8 +32,9 @@ public class EnemySpawner : Entity
         }
     }
 
-    void Start()
+    public override void Start()
     {
+        base.Start();
         StartCoroutine(SpawnCyclic());
     }
 

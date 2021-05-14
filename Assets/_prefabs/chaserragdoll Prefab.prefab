@@ -1396,11 +1396,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5921abf337056c742be3d793233abc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAgent: {fileID: 3465158046393595800}
-  target: {fileID: 0}
-  animator: {fileID: 2010296402748551543}
-  walkingBoolName: isWalking
-  delay: 0.5
+  _enemy: {fileID: 0}
+  _myAgent: {fileID: 3465158046393595800}
+  _target: {fileID: 0}
+  _delay: 0.5
 --- !u!114 &-4423671247206156489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1417,6 +1416,7 @@ MonoBehaviour:
   _animator: {fileID: 2010296402748551543}
   attackArea: {fileID: 0}
   _chaser: {fileID: 3465158046393595803}
+  walkingBoolName: isWalking
 --- !u!1 &4951535728857590646
 GameObject:
   m_ObjectHideFlags: 0
