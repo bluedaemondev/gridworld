@@ -5,39 +5,40 @@ using UnityEngine.AI;
 
 public class TargetChaser : MonoBehaviour
 {
-    [SerializeField] private NavMeshAgent myAgent;
-    [SerializeField] private Transform target;
-    [SerializeField] private Animator animator;
-    [SerializeField] private string walkingBoolName = "isWalking";
-    [SerializeField] private float delay = 0.5f;
+    [SerializeField] private EnemyChaser _enemy;
 
-    //void Start()
-    //{
-    //    StartCoroutine(Chase());
-    //}
+    [SerializeField] private NavMeshAgent _myAgent;
+    [SerializeField] private Transform _target;
+    //[SerializeField] private Animator animator;
+    [SerializeField] private float _delay = 0.5f;
+    
+    public void Init(EnemyChaser enemy)
+    {
+        this._enemy = enemy;
+    }
 
     public void StartChasingTarget(Transform _target = null)
     {
         if (_target != null)
-            this.target = _target;
+            this._target = _target;
 
         StartCoroutine(Chase());
     }
 
     private IEnumerator Chase()
     {
-        animator.SetBool(walkingBoolName, true);
+        this._enemy.Move();
 
         while (true)
         {
-            if (myAgent.SetDestination(target.position))
+            if (_myAgent.SetDestination(_target.position))
             {
-                while (myAgent.pathPending)
+                while (_myAgent.pathPending)
                 {
                     yield return new WaitForEndOfFrame();
                 }
 
-                yield return new WaitForSeconds(delay);
+                yield return new WaitForSeconds(_delay);
             }
             else
             {
