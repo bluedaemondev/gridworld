@@ -6,11 +6,15 @@ namespace Managers
 {
     public class SceneManager : MonoBehaviour
     {
+        public void ReLoadSync()
+        {
+            sManager.LoadScene(sManager.GetActiveScene().buildIndex);
+        }
         public void LoadSync(string sceneName)
         {
             sManager.LoadScene(sceneName);
         }
-        
+
         public void LoadSync(int sceneBuildIndex)
         {
             sManager.LoadScene(sceneBuildIndex);

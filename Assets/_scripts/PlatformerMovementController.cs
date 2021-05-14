@@ -18,8 +18,7 @@ public class PlatformerMovementController : MonoBehaviour
     public Animator animator;
     public string movementSpeedParameterName = "movementSpeed";
     public string animatorJumpParameterName = "jumping";
-    [SerializeField]
-    private bool canMove = true;
+    public bool canMove = true;
     [SerializeField]
     private Transform cameraTransform;
 

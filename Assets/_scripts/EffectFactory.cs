@@ -13,7 +13,7 @@ public class EffectFactory : MonoBehaviour
             Destroy(this);
     }
 
-    public void InstantiateEffectAt(GameObject prefabEffect, Vector2 position, Quaternion rotation, Transform parent = null)
+    public void InstantiateEffectAt(GameObject prefabEffect, Vector3 position, Quaternion rotation, Transform parent = null)
     {
         GameObject spwn = Instantiate(prefabEffect, position, rotation, parent);
         if (spwn.GetComponent<ParticleSystem>())

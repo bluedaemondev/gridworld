@@ -24,7 +24,10 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     [SerializeField] private EnemySpawner _originSpawner;
 
     [SerializeField] private string walkingBoolName = "isWalking";
+    [SerializeField] private string damagedAnimationName = "Damaged";
+    [SerializeField] private string attackAnimationName = "Attack";
 
+    public bool canMove = true;
 
     public void Init()
     {
@@ -38,9 +41,9 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 
         if (_animator == null)
             _animator = GetComponent<Animator>();
-        
 
-        DisableRagdollPhysics();
+
+        //DisableRagdollPhysics();
 
         _chaser.Init(this);
         _chaser.StartChasingTarget(LevelManager.instance.player);
@@ -54,15 +57,22 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 
     public override float TakeDamage(float value)
     {
-        value = base.TakeDamage(value);
-        this._myRigidbody.AddExplosionForce(3 * value / 4, transform.position, 2);
+        if (!this.IsDead())
+        {
+            value = base.TakeDamage(value);
 
+            this._animator.Play(damagedAnimationName);
+
+            this._myRigidbody.AddExplosionForce(3 * value / 4, transform.position, 2);
+        }
         return value;
     }
     public override void Die()
     {
         base.Die();
         this._animator.SetTrigger("die");
+
+        EnableRagdollPhysics();
     }
 
 
@@ -74,24 +84,40 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     {
         this._animator.SetBool(walkingBoolName, false);
     }
-
     /// <summary>
-    /// Metodo para animation
+    /// metodo para animacion
     /// </summary>
-    public void Attack()
+    public void AttackEvent()
     {
-        this.attackArea.enabled = !this.attackArea.enabled;
+        if (!_health.IsDead())
+            this.attackArea.enabled = !this.attackArea.enabled;
+        else
+            this.attackArea.enabled = false;
+    }
+    public void SwitchCanMove()
+    {
+        this.canMove = !this.canMove;
     }
 
+    public void Attack()
+    {
+        if (!this._health.IsDead())
+            //this._animator.SetBool(attackBoolParam, true);
+            this._animator.Play(attackAnimationName);
+    }
     public void EnableRagdollPhysics()
     {
 
-        //_myRigidbody.isKinematic = false;
+        if (_myRigidbody != null)
+            _myRigidbody.isKinematic = false;
+        
+        _animator.enabled = false;
+
         Component[] components = GetComponentsInChildren(typeof(Transform));
 
         foreach (Component c in components)
         {
-            if (c.TryGetComponent<Rigidbody>(out Rigidbody rb))
+            if (c.TryGetComponent<Rigidbody>(out Rigidbody rb) && rb != this.transform)
             {
                 rb.isKinematic = false;
             }
@@ -101,12 +127,16 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 
     public void DisableRagdollPhysics()
     {
-        //_myRigidbody.isKinematic = true;
+        if (_myRigidbody != null)
+            _myRigidbody.isKinematic = true;
+
+        _animator.enabled = false;
+
         Component[] components = GetComponentsInChildren(typeof(Transform));
 
         foreach (Component c in components)
         {
-            if (c.TryGetComponent<Rigidbody>(out Rigidbody rb))
+            if (c.TryGetComponent<Rigidbody>(out Rigidbody rb) && rb != this.transform)
             {
                 rb.isKinematic = true;
             }

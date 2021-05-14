@@ -10,11 +10,17 @@ public abstract class Entity : MonoBehaviour , IDamageable
 {
     protected Health _health;
     protected Rigidbody _myRigidbody;
+    protected GameObject killParticles;
 
     public virtual void Start()
     {
         //_health = new Health(100); //===> pisar por cada tipo de entidad creando su vida desde la instancia
         _myRigidbody = GetComponent<Rigidbody>();
+    }
+
+    public virtual void Destroy()
+    {
+        Destroy(this.gameObject);
     }
 
     public virtual void Die()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,10 @@ public class EnemySpawner : Entity
     private static int enemiesInPool = 0;
 
     [SerializeField] private float spawnAfter = 3f;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private string spawnAnimationName = "OnSpawn";
+
+
 
     public EnemyType toSpawn = EnemyType.Chaser;
     
@@ -46,14 +51,25 @@ public class EnemySpawner : Entity
         while(enemiesInPool < maxEnemiesPool)
         {
             SpawnEnemy();
+            _animator.Play(spawnAnimationName);
+
             yield return new WaitForSecondsRealtime(spawnAfter);
         }
     }
 
     public override void Start()
     {
+        Init();
         base.Start();
+    }
+    public override void Destroy()
+    {
+        EffectFactory.instance.InstantiateEffectAt(killParticles, transform.position, Quaternion.identity, LevelManager.instance.enemiesContainer);
+        base.Destroy();
+    }
+    private void Init()
+    {
+        this._health = new Health(400);
         StartCoroutine(SpawnCyclic());
     }
-
 }
