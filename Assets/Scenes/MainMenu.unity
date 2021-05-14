@@ -1896,7 +1896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Enemy Shooter, Main menu, explosion system, enemy animator
+  m_text: 'Enemy Shooter, explosion system, enemy animator
 
     Gonzalo Lorenzo'
   m_isRightToLeft: 0
