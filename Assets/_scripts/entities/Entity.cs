@@ -22,6 +22,11 @@ public abstract class Entity : MonoBehaviour , IDamageable
         Debug.Log("Dying");
     }
 
+    public bool IsDead()
+    {
+        return this._health.IsDead();
+    }
+
     public virtual float TakeDamage(float value)
     {
         Debug.Log("Taking dmg " + value);

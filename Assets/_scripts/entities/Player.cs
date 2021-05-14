@@ -12,6 +12,7 @@ namespace Entities
         [SerializeField] private Animator _animator;
         [SerializeField] private BoxCollider attackArea;
 
+        [SerializeField] private string attackBoolParam = "attack";
         [SerializeField] private string attackAnimationName = "Attack";
         public string attackButton = "Fire1";
         //public string attackTriggerName = "Attack";
@@ -28,6 +29,7 @@ namespace Entities
         }
         public void Attack()
         {
+            //this._animator.SetBool(attackBoolParam, true);
             this._animator.Play(attackAnimationName);
         }
 

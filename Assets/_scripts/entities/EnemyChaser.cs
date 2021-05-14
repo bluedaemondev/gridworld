@@ -8,10 +8,12 @@ using UnityEngine;
 /// </summary>
 public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 {
-    public static EnemyChaser InstantiateEnemy(Vector3 position, Quaternion rot, Transform enemyContainerScene)
+    public static EnemyChaser InstantiateEnemy(Vector3 position, Quaternion rot, Transform enemyContainerScene, EnemySpawner spawnPoint)
     {
-        var result = Instantiate(LevelManager.instance.assets.enemyChaser_Prefab, position, rot, enemyContainerScene);
-        return result.GetComponent<EnemyChaser>();
+        var go = Instantiate(LevelManager.instance.assets.enemyChaser_Prefab, position, rot, enemyContainerScene);
+        var result = go.GetComponent<EnemyChaser>();
+        result._originSpawner = spawnPoint;
+        return result;
     }
 
     [SerializeField] private GameObject bloodPrefab;
@@ -19,6 +21,7 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     [SerializeField] private BoxCollider attackArea;
 
     [SerializeField] private TargetChaser _chaser;
+    [SerializeField] private EnemySpawner _originSpawner;
 
     [SerializeField] private string walkingBoolName = "isWalking";
 
