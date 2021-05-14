@@ -82,7 +82,7 @@ public class PlatformerMovementController : MonoBehaviour
     {
         _player.SetAnimState(animatorJumpParameterName, false);
     }
-
+   
     private void FixedUpdate()
     {
         if (canMove)
