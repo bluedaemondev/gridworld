@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
     public event Action onWin;
 
     [SerializeField] private List<Entity> aliveEnemies;
+    [SerializeField] private int countMaxEnemies;
 
     /// <summary>
     /// win condition - destroy everyone
@@ -36,7 +37,10 @@ public class LevelManager : MonoBehaviour
             Debug.Log("removing " + entity.name);
             aliveEnemies.Remove(entity);
 
-            if(aliveEnemies.Count == 0)
+            hudManager.UpdateUIEnemies(aliveEnemies.Count, countMaxEnemies);
+
+
+            if (aliveEnemies.Count == 0)
             {
                 Win();
             }
@@ -48,6 +52,8 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("adding " + entity.name);
             aliveEnemies.Add(entity);
+
+            hudManager.UpdateUIEnemies(aliveEnemies.Count, ++countMaxEnemies);
         }
     }
 
