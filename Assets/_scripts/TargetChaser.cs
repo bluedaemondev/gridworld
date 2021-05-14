@@ -11,6 +11,7 @@ public class TargetChaser : MonoBehaviour
     [SerializeField] private Transform _target;
     //[SerializeField] private Animator animator;
     [SerializeField] private float _delay = 0.5f;
+    public float midDistAttack = 1f;
     
     public void Init(EnemyChaser enemy)
     {
@@ -29,7 +30,9 @@ public class TargetChaser : MonoBehaviour
     {
         this._enemy.Move();
 
-        while (true)
+        var entity = _target.GetComponent<IDamageable>();
+
+        while (!this._enemy.IsDead() && !entity.IsDead())
         {
             if (_myAgent.SetDestination(_target.position))
             {
@@ -39,11 +42,18 @@ public class TargetChaser : MonoBehaviour
                 }
 
                 yield return new WaitForSeconds(_delay);
+                if(Vector3.Distance(transform.position, LevelManager.instance.player.position) <= midDistAttack)
+                {
+                    this._enemy.Attack();
+                }
             }
             else
             {
                 yield return new WaitForEndOfFrame();
             }
         }
+
+        this._enemy.StopMoving();
+
     }
 }

@@ -10,6 +10,7 @@ public abstract class Entity : MonoBehaviour , IDamageable
 {
     protected Health _health;
     protected Rigidbody _myRigidbody;
+    protected GameObject killParticles;
 
     public virtual void Start()
     {
@@ -17,9 +18,19 @@ public abstract class Entity : MonoBehaviour , IDamageable
         _myRigidbody = GetComponent<Rigidbody>();
     }
 
+    public virtual void Destroy()
+    {
+        Destroy(this.gameObject);
+    }
+
     public virtual void Die()
     {
         Debug.Log("Dying");
+    }
+
+    public bool IsDead()
+    {
+        return this._health.IsDead();
     }
 
     public virtual float TakeDamage(float value)

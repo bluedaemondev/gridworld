@@ -5,7 +5,7 @@ using UnityEngine;
 public class SetTriggerOnEnter : MonoBehaviour
 {
     public bool destroysAfterTrigger = false;
-    [SerializeField] private LayerMask interactsWith;
+    public LayerMask interactsWith;
 
     public string triggerName = "die";
 

@@ -18,8 +18,7 @@ public class PlatformerMovementController : MonoBehaviour
     public Animator animator;
     public string movementSpeedParameterName = "movementSpeed";
     public string animatorJumpParameterName = "jumping";
-    [SerializeField]
-    private bool canMove = true;
+    public bool canMove = true;
     [SerializeField]
     private Transform cameraTransform;
 
@@ -34,8 +33,6 @@ public class PlatformerMovementController : MonoBehaviour
 
     void Update()
     {
-
-
         if (canMove)
         {
             inputVector = Input.GetAxis(horizontalAxis) * cameraTransform.right;
@@ -78,11 +75,6 @@ public class PlatformerMovementController : MonoBehaviour
         }
     }
 
-    public void StopJumping()
-    {
-        _player.SetAnimState(animatorJumpParameterName, false);
-    }
-   
     private void FixedUpdate()
     {
         if (canMove)
@@ -94,5 +86,13 @@ public class PlatformerMovementController : MonoBehaviour
 
             myRigidbody.MovePosition(transform.position + inputVector * (movementSpeed * Time.deltaTime));
         }
+    }
+    public void StopJumping()
+    {
+        _player.SetAnimState(animatorJumpParameterName, false);
+    }
+    public void SwitchCanMove()
+    {
+        this.canMove = !this.canMove;
     }
 }

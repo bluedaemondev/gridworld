@@ -2,4 +2,5 @@
 {
     float TakeDamage(float value);
     void Die();
+    bool IsDead();
 }
