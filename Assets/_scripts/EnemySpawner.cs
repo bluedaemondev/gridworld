@@ -22,12 +22,13 @@ public class EnemySpawner : Entity
 
 
     public EnemyType toSpawn = EnemyType.Chaser;
-    
+
     public void SpawnEnemy()
     {
 
         var nEnemy = EnemyChaser.InstantiateEnemy(transform.position, Quaternion.identity, LevelManager.instance.enemiesContainer, this);
-        
+        SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.spawnEnemy);
+
         // pendiente para tener el otro enemigo y la clase base
 
         //switch (toSpawn) {
@@ -50,7 +51,7 @@ public class EnemySpawner : Entity
 
     private IEnumerator SpawnCyclic()
     {
-        while(enemiesInPool < maxEnemiesPool)
+        while (enemiesInPool < maxEnemiesPool)
         {
             SpawnEnemy();
             _animator.Play(spawnAnimationName);
@@ -72,6 +73,8 @@ public class EnemySpawner : Entity
     {
         this._health = new Health(400);
         this._animator = GetComponent<Animator>();
+        LevelManager.instance.SubscribeAliveEntity(this);
+
         StartCoroutine(SpawnCyclic());
     }
     public override float TakeDamage(float value)
@@ -86,5 +89,7 @@ public class EnemySpawner : Entity
         base.Die();
         this._animator.SetTrigger("die");
         this._animator.Play(dyingAnimationName);
+
+        LevelManager.instance.RemoveEnemyFromAccountance(this);
     }
 }

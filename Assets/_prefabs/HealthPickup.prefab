@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactsWith:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 512
   HealAmount: -25
 --- !u!95 &2025621815324057898
 Animator:

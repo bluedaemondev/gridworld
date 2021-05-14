@@ -18,9 +18,7 @@ public class EnemyShooter : Entity, IRagdoll
     public void Init()
     {
         this._health = new Health(50);
-
-        //DisableRagdollPhysics();
-
+        LevelManager.instance.SubscribeAliveEntity(this);
     }
 
     public override void Start()
@@ -31,6 +29,7 @@ public class EnemyShooter : Entity, IRagdoll
 
     public override float TakeDamage(float value)
     {
+        SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.dyingEnemyShooter);
         return base.TakeDamage(value);
     }
 
@@ -38,6 +37,10 @@ public class EnemyShooter : Entity, IRagdoll
     {
         base.Die();
         this._animator.SetTrigger("die");
+        SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.dyingEnemyShooter);
+
+        LevelManager.instance.RemoveEnemyFromAccountance(this);
+
     }
 
     public void EnableRagdollPhysics()

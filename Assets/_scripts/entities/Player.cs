@@ -37,9 +37,11 @@ namespace Entities
         }
         public void Attack()
         {
-            if (!this._health.IsDead())
-                //this._animator.SetBool(attackBoolParam, true);
+            if (!this._health.IsDead() && !_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            {    //this._animator.SetBool(attackBoolParam, true);
                 this._animator.Play(attackAnimationName);
+                SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.attackSoundPlayer);
+            }
         }
 
         public void Init()
@@ -79,8 +81,10 @@ namespace Entities
             {
                 //this._animator.Play(damagedAnimationName);
                 healthBar.SetHealth(value);
+                this._animator.Play(damagedAnimationName);
+                
                 this._myRigidbody.AddExplosionForce(3 * value / 4, transform.forward, 2);
-
+                SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.dyingPlayer);
             }
             return value;
 
@@ -93,6 +97,8 @@ namespace Entities
             this._animator.SetTrigger(dieTrigger);
             this._animator.Play(dyingAnimationName);
             controller.canMove = false;
+            SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.dyingPlayer);
+
             //EnableRagdollPhysics();
         }
 

@@ -95,4 +95,8 @@ public class PlatformerMovementController : MonoBehaviour
     {
         this.canMove = !this.canMove;
     }
+    public void SoundStep()
+    {
+        SoundManager.instance.PlayAmbient(LevelManager.instance.soundAssets.stepPlayer);
+    }
 }

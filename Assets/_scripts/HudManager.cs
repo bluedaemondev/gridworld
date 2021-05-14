@@ -10,6 +10,12 @@ namespace Managers
         public GameObject winUI;
         public GameObject mainHud;
 
+        public EnemiesRemainingUI enemiesRemainingUi;
+
+        public void UpdateUIEnemies(int countRemaining, int countMax)
+        {
+            enemiesRemainingUi.UpdateUI(countRemaining, countMax);
+        }
 
         public void DisplayLose()
         {

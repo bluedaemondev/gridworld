@@ -45,6 +45,8 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 
         //DisableRagdollPhysics();
 
+        LevelManager.instance.SubscribeAliveEntity(this);
+
         _chaser.Init(this);
         _chaser.StartChasingTarget(LevelManager.instance.player);
     }
@@ -64,6 +66,7 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
             this._animator.Play(damagedAnimationName);
 
             this._myRigidbody.AddExplosionForce(3 * value / 4, transform.position, 2);
+            SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.punchSoundImpact);
         }
         return value;
     }
@@ -71,6 +74,8 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     {
         base.Die();
         this._animator.SetTrigger("die");
+        LevelManager.instance.RemoveEnemyFromAccountance(this);
+        SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.dyingEnemyChaser);
 
         EnableRagdollPhysics();
     }
@@ -83,6 +88,10 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     public void StopMoving()
     {
         this._animator.SetBool(walkingBoolName, false);
+    }
+    public void SoundStep()
+    {
+        SoundManager.instance.PlayAmbient(LevelManager.instance.soundAssets.stepPlayer);
     }
     /// <summary>
     /// metodo para animacion
