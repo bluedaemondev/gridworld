@@ -54,8 +54,10 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 
     public override float TakeDamage(float value)
     {
+        value = base.TakeDamage(value);
+        this._myRigidbody.AddExplosionForce(3 * value / 4, transform.position, 2);
 
-        return base.TakeDamage(value);
+        return value;
     }
     public override void Die()
     {

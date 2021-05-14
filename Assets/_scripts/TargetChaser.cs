@@ -29,7 +29,7 @@ public class TargetChaser : MonoBehaviour
     {
         this._enemy.Move();
 
-        while (true)
+        while (!this._enemy.IsDead())
         {
             if (_myAgent.SetDestination(_target.position))
             {
@@ -45,5 +45,6 @@ public class TargetChaser : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+
     }
 }

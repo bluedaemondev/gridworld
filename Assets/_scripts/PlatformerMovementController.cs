@@ -34,8 +34,6 @@ public class PlatformerMovementController : MonoBehaviour
 
     void Update()
     {
-
-
         if (canMove)
         {
             inputVector = Input.GetAxis(horizontalAxis) * cameraTransform.right;
@@ -78,11 +76,6 @@ public class PlatformerMovementController : MonoBehaviour
         }
     }
 
-    public void StopJumping()
-    {
-        _player.SetAnimState(animatorJumpParameterName, false);
-    }
-   
     private void FixedUpdate()
     {
         if (canMove)
@@ -94,5 +87,13 @@ public class PlatformerMovementController : MonoBehaviour
 
             myRigidbody.MovePosition(transform.position + inputVector * (movementSpeed * Time.deltaTime));
         }
+    }
+    public void StopJumping()
+    {
+        _player.SetAnimState(animatorJumpParameterName, false);
+    }
+    public void SwitchCanMove()
+    {
+        this.canMove = !this.canMove;
     }
 }
