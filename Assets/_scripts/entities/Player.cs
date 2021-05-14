@@ -8,6 +8,7 @@ namespace Entities
 {
     public class Player : Entity, IAttacker, IRagdoll
     {
+        [SerializeField] private float healthAmount = 100f;
         [SerializeField] private GameObject bloodPrefab;
         [SerializeField] private Animator _animator;
         [SerializeField] private BoxCollider attackArea;
@@ -18,7 +19,9 @@ namespace Entities
         [SerializeField] private string dyingAnimationName = "Dying";
         [SerializeField] private string dieTrigger = "die";
         [SerializeField] private PlatformerMovementController controller;
+        
         public string attackButton = "Fire1";
+        public HealthBar healthBar;
 
         //public string attackTriggerName = "Attack";
 
@@ -42,8 +45,9 @@ namespace Entities
         public void Init()
         {
             this.attackArea.enabled = false;
-            this._health = new Health(100);
-
+            this._health = new Health(healthAmount);
+            healthBar.SetMaxHealth(healthAmount);
+            
             //DisableRagdollPhysics();
         }
 
@@ -74,10 +78,14 @@ namespace Entities
             if (!this.IsDead())
             {
                 //this._animator.Play(damagedAnimationName);
+                healthBar.SetHealth(value);
                 this._myRigidbody.AddExplosionForce(3 * value / 4, transform.forward, 2);
 
             }
             return value;
+
+            
+
         }
         public override void Die()
         {
