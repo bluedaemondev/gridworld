@@ -16,6 +16,8 @@ public class EnemySpawner : Entity
     [SerializeField] private float spawnAfter = 3f;
     [SerializeField] private Animator _animator;
     [SerializeField] private string spawnAnimationName = "OnSpawn";
+    [SerializeField] private string damageAnimationName = "OnDamage";
+    [SerializeField] private string dyingAnimationName = "DyingSpawner";
 
 
 
@@ -64,12 +66,25 @@ public class EnemySpawner : Entity
     }
     public override void Destroy()
     {
-        EffectFactory.instance.InstantiateEffectAt(killParticles, transform.position, Quaternion.identity, LevelManager.instance.enemiesContainer);
         base.Destroy();
     }
     private void Init()
     {
         this._health = new Health(400);
+        this._animator = GetComponent<Animator>();
         StartCoroutine(SpawnCyclic());
+    }
+    public override float TakeDamage(float value)
+    {
+        value = base.TakeDamage(value);
+        this._animator.Play(damageAnimationName);
+
+        return value;
+    }
+    public override void Die()
+    {
+        base.Die();
+        this._animator.SetTrigger("die");
+        this._animator.Play(dyingAnimationName);
     }
 }
