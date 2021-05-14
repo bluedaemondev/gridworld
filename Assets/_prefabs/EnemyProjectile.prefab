@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: -8160035957242252487}
-  speed: 4
+  speed: 7
   timeToDestroy: 5
 --- !u!114 &-8766765989006262207
 MonoBehaviour:
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7141eaac4c0a26b4c9655267f47e0deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 101
-  blastRadius: 10
+  _damage: 50
+  blastRadius: 6.31
   explosionForce: 4
   upforce: 1
