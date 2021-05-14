@@ -25,6 +25,8 @@ public class HealthPickup : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        }                  
+            SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.healPickupSound);
+
+        }
     }   
 }

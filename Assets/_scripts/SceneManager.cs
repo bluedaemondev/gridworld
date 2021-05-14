@@ -6,6 +6,8 @@ namespace Managers
 {
     public class SceneManager : MonoBehaviour
     {
+        [SerializeField] private int menuSceneBuildIndex = 0;
+
         public void ReLoadSync()
         {
             sManager.LoadScene(sManager.GetActiveScene().buildIndex);
@@ -23,6 +25,10 @@ namespace Managers
         public void LoadNextSceneSync()
         {
             sManager.LoadScene(sManager.GetActiveScene().buildIndex + 1);
+        }
+        public void LoadMenu()
+        {
+            this.LoadSync(menuSceneBuildIndex);
         }
     }
 }

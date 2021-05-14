@@ -12,9 +12,20 @@ public class SoundLibrarySO : ScriptableObject
     public AudioClip musicLevelLoop;
 
     public AudioClip attackSoundPlayer;
+    public AudioClip attackSoundShooter;
+
+    public AudioClip punchSoundImpact;
+
     public AudioClip explosionSound;
     public AudioClip stepPlayer;
     public AudioClip spawnEnemy;
+
+    public AudioClip dyingEnemyChaser;
+    public AudioClip dyingEnemyShooter;
+    public AudioClip dyingPlayer;
+
+    public AudioClip healPickupSound;
+
 
     public AudioClip winSound;
     public AudioClip loseSound;

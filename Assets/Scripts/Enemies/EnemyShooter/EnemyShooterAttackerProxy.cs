@@ -9,6 +9,8 @@ public class EnemyShooterAttackerProxy : MonoBehaviour
 
     public void Attack()
     {
+        SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.attackSoundShooter);
+
         controlledBehaviour.CreateProjectile();
     }
 }

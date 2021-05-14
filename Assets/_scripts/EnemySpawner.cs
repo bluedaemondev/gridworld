@@ -22,12 +22,13 @@ public class EnemySpawner : Entity
 
 
     public EnemyType toSpawn = EnemyType.Chaser;
-    
+
     public void SpawnEnemy()
     {
 
         var nEnemy = EnemyChaser.InstantiateEnemy(transform.position, Quaternion.identity, LevelManager.instance.enemiesContainer, this);
-        
+        SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.spawnEnemy);
+
         // pendiente para tener el otro enemigo y la clase base
 
         //switch (toSpawn) {
@@ -50,7 +51,7 @@ public class EnemySpawner : Entity
 
     private IEnumerator SpawnCyclic()
     {
-        while(enemiesInPool < maxEnemiesPool)
+        while (enemiesInPool < maxEnemiesPool)
         {
             SpawnEnemy();
             _animator.Play(spawnAnimationName);

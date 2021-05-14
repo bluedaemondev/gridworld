@@ -122,7 +122,14 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: a47d1046b87e16f4490f2c5e1e403b02
-  m_FloatValues: {}
+  m_FloatValues:
+    16c37790c4255534cb969a04277dc610: 5.6
+    2da402f0a3e5f6a4388a8a2fd0534ebe: 0.17
+    f64e0852ced28724cb34c07be5935980: -4.560346
+    3c7daa16e0bffb843a904db000bcbeda: 1019
+    6e0661e95a0c4c3418d807a4bc5dbe66: -3889
+    70d5f1ba6cbf428469bc0244d4000699: -6.133707
+    1f9d0d6ff22adb7409a26e2da54e5c2f: -7037
   m_TransitionOverrides: {}
 --- !u!243 &1459713149234470653
 AudioMixerGroupController:
@@ -143,6 +150,22 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &5547600243636002944
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 97bb74ca0d477f541ad9047f0fd779a1
+  m_EffectName: Highpass Simple
+  m_MixLevel: 4ac267ab6620c294bab2af9168e6f061
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: f0ad0619a3c2cf64aa99a95d527615ab
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &8272639872359768924
 AudioMixerEffectController:
   m_ObjectHideFlags: 3

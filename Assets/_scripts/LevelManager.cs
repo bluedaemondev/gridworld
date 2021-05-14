@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance { get; private set; }
 
     public EntityLibrarySO assets;
+    public SoundLibrarySO soundAssets;
 
     public Transform enemiesContainer;
     public Transform player;
