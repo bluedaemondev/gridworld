@@ -5132,7 +5132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6458ed1d73eaca245b36e39ca5e34365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAfter: 5
+  spawnAfter: 10
   _animator: {fileID: 1726279018}
   spawnAnimationName: OnSpawn
   damageAnimationName: DamageSpawner

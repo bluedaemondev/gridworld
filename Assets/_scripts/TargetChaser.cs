@@ -54,6 +54,7 @@ public class TargetChaser : MonoBehaviour
         }
 
         this._enemy.StopMoving();
+        this._enemy.EnableRagdollPhysics();
 
     }
 }
