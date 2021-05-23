@@ -35,6 +35,9 @@ public abstract class Entity : MonoBehaviour , IDamageable
 
     public virtual float TakeDamage(float value)
     {
+        if (IsDead())
+            return 0;
+
         Debug.Log("Taking dmg " + value);
         if(0 >= this._health.TakeDamage(value))
         {

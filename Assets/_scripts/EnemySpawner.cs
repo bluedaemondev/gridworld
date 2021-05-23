@@ -65,12 +65,15 @@ public class EnemySpawner : Entity
         Init();
         base.Start();
     }
+
     public override void Destroy()
     {
         base.Destroy();
     }
     private void Init()
     {
+        enemiesInPool = 0;
+
         this._health = new Health(400);
         this._animator = GetComponent<Animator>();
         LevelManager.instance.SubscribeAliveEntity(this);

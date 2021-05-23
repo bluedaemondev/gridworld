@@ -83,6 +83,8 @@ public class LevelManager : MonoBehaviour
         mapManager.Init();
         cronometer.Init(timeTicker);
 
+        
+
         onLose += RestartOnLose;
         onWin += PauseGame;
     }

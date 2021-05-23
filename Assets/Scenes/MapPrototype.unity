@@ -11127,14 +11127,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2061848156}
-  cameraDistance: 1.58
-  angle: -92
-  cameraHeight: 0.75
-  targetHeightOffset: 0.39
+  cameraDistance: 3.75
+  angle: 270
+  cameraHeight: 3
+  targetHeightOffset: 1.25
   rotationAxis: Mouse X
   rotationAxisVert: Mouse Y
   angleClampVert: 30
-  rotationSpeed: -90
+  rotationSpeed: -60
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
