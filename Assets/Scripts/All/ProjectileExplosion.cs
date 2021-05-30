@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileExplosion : MonoBehaviour
 {
     [SerializeField]
-    private float _damage;
+    private float _damage = 0;
     [SerializeField]
     private float blastRadius = 10f;
     [SerializeField]
@@ -16,7 +16,7 @@ public class ProjectileExplosion : MonoBehaviour
     private Collider[] hitColliders;
     private void OnCollisionEnter(Collision collision)
     {
-        Explode(collision.contacts[0].point);
+       
     }
 
     private void Explode(Vector3 explosionPoint)
