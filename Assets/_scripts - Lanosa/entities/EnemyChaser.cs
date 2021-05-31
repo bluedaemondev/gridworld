@@ -59,10 +59,12 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 
     public override float TakeDamage(float value)
     {
+        value = base.TakeDamage(value);
+
         if (!this.IsDead())
         {
-            value = base.TakeDamage(value);
 
+            Debug.Log("take damage zombie " + this._health.GetHealth());
             this._animator.Play(damagedAnimationName);
 
             this._myRigidbody.AddExplosionForce(3 * value / 4, transform.position, 2);
@@ -72,12 +74,16 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     }
     public override void Die()
     {
+        this.attackArea.enabled = false;
+
         base.Die();
         this._animator.SetTrigger("die");
         LevelManager.instance.RemoveEnemyFromAccountance(this);
         SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.dyingEnemyChaser);
 
         EnableRagdollPhysics();
+
+        Destroy(this.gameObject, 3f);
     }
 
 
@@ -119,7 +125,7 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 
         if (_myRigidbody != null)
             _myRigidbody.isKinematic = false;
-        
+
         _animator.enabled = false;
 
         Component[] components = GetComponentsInChildren(typeof(Transform));

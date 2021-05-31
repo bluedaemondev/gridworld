@@ -19,6 +19,7 @@ public class EnemySpawner : Entity
     [SerializeField] private string damageAnimationName = "OnDamage";
     [SerializeField] private string dyingAnimationName = "DyingSpawner";
 
+    public float life = 200;
 
 
     public EnemyType toSpawn = EnemyType.Chaser;
@@ -74,7 +75,7 @@ public class EnemySpawner : Entity
     {
         enemiesInPool = 0;
 
-        this._health = new Health(400);
+        this._health = new Health(life);
         this._animator = GetComponent<Animator>();
         LevelManager.instance.SubscribeAliveEntity(this);
 
