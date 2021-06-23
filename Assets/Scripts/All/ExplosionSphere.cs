@@ -9,11 +9,12 @@ public class ExplosionSphere : MonoBehaviour
 
     void Start()
     {
-        Destroy(this.gameObject, timeToDestroy);  
+        Destroy(this.gameObject, timeToDestroy);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<IDamageable>().TakeDamage(Damage);
+        if (TryGetComponent(out IDamageable target))
+            target.TakeDamage(Damage);
     }
 }

@@ -1,10 +1,28 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EffectFactory : MonoBehaviour
 {
     public static EffectFactory instance { get; private set; }
+
+    public struct CameraShakeInfo
+    {
+        public float amplitude { get; set; }
+        public float frequency { get; set; }
+        public float time { get; set; }
+
+        public CameraShakeInfo(float amp, float freq, float timeEffect)
+        {
+            this.amplitude = amp;
+            this.frequency = freq;
+            this.time = timeEffect;
+
+        }
+    }
+
+
     void Awake()
     {
         if (!instance)
@@ -25,5 +43,10 @@ public class EffectFactory : MonoBehaviour
             Destroy(pSys.gameObject, pSys.main.duration);
 
         }
+    }
+
+    internal void ShakeCamera(string shakeType)
+    {
+        throw new NotImplementedException();
     }
 }
