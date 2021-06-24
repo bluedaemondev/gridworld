@@ -22,6 +22,7 @@ public class SoundLibrarySO : ScriptableObject
 
     public AudioClip dyingEnemyChaser;
     public AudioClip dyingEnemyShooter;
+    public AudioClip dyingEnemySummoner;
     public AudioClip dyingPlayer;
 
     public AudioClip healPickupSound;
