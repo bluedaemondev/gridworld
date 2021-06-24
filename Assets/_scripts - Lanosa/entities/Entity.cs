@@ -39,6 +39,8 @@ public abstract class Entity : MonoBehaviour , IDamageable
             return 0;
 
         Debug.Log("Taking dmg " + value);
+        EffectFactory.instance.ShakeCamera(0.3f);
+
         if(0 >= this._health.TakeDamage(value))
         {
             this.Die();

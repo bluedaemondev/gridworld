@@ -7,20 +7,23 @@ public class EffectFactory : MonoBehaviour
 {
     public static EffectFactory instance { get; private set; }
 
-    public struct CameraShakeInfo
-    {
-        public float amplitude { get; set; }
-        public float frequency { get; set; }
-        public float time { get; set; }
+    public CameraShake shaker;
+    public Camera mainCam;
 
-        public CameraShakeInfo(float amp, float freq, float timeEffect)
-        {
-            this.amplitude = amp;
-            this.frequency = freq;
-            this.time = timeEffect;
 
-        }
-    }
+    //public struct CameraShakeInfo
+    //{
+    //    public float amplitude { get; set; }
+    //    public float frequency { get; set; }
+    //    public float time { get; set; }
+
+    //    public CameraShakeInfo(float amp, float freq, float timeEffect)
+    //    {
+    //        this.amplitude = amp;
+    //        this.frequency = freq;
+    //        this.time = timeEffect;
+    //    }
+    //}
 
 
     void Awake()
@@ -29,6 +32,12 @@ public class EffectFactory : MonoBehaviour
             instance = this;
         else
             Destroy(this);
+
+        if (mainCam == null)
+            mainCam = Camera.main;
+        if (shaker == null)
+            shaker = mainCam.GetComponent<CameraShake>();
+
     }
 
     public void InstantiateEffectAt(GameObject prefabEffect, Vector3 position, Quaternion rotation, Transform parent = null)
@@ -45,8 +54,8 @@ public class EffectFactory : MonoBehaviour
         }
     }
 
-    internal void ShakeCamera(string shakeType)
+    public void ShakeCamera(float time)
     {
-        throw new NotImplementedException();
+        this.shaker.ShakeCameraFor(time);
     }
 }
