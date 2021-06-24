@@ -1449,11 +1449,6 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.minGradient.key0.b
       value: 0.88915014
       objectReference: {fileID: 0}
-    - target: {fileID: 1325166416829868095, guid: a2194d6db7ff1804da4e44d22afe3155,
-        type: 3}
-      propertyPath: InitialModule.startColor.minGradient.key0.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6108820405999976778, guid: a2194d6db7ff1804da4e44d22afe3155,
         type: 3}
       propertyPath: m_LocalPosition.x
