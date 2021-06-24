@@ -13,6 +13,7 @@ public class SoundLibrarySO : ScriptableObject
 
     public AudioClip attackSoundPlayer;
     public AudioClip attackSoundShooter;
+    public AudioClip attackSoundSummoner;
 
     public AudioClip punchSoundImpact;
 
