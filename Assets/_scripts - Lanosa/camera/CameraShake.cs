@@ -4,11 +4,7 @@ using System.Collections;
 public class CameraShake : MonoBehaviour
 {
     private Transform camTransform;
-    private float shakeDuration = 0f;
 
-    // Amplitude of the shake. A larger value shakes the camera harder.
-    public float shakeAmount = 0.7f;
-    public float decreaseFactor = 1.0f;
 
     Vector3 originalPos;
 
@@ -22,23 +18,47 @@ public class CameraShake : MonoBehaviour
         originalPos = camTransform.localPosition;
     }
 
-    public void ShakeCameraFor(float time)
+    public void ShakeCameraFor(float time, float scale)
     {
-        this.shakeDuration = time;
+        StopAllCoroutines();
+        StartCoroutine(CamShakeRoutine(time, scale));
     }
 
-    void Update()
+    IEnumerator CamShakeRoutine(float duration, float amount)
     {
-        if (shakeDuration > 0)
-        {
-            camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
+        float endTime = Time.time + duration;
 
-            shakeDuration -= Time.deltaTime * decreaseFactor;
-        }
-        else
+        while (Time.time < endTime)
         {
-            shakeDuration = 0f;
-            camTransform.localPosition = originalPos;
+            camTransform.position = originalPos + Random.insideUnitSphere * amount;
+
+            duration -= Time.deltaTime;
+
+            yield return null;
         }
+
+        camTransform.position = originalPos;
     }
+
+    #region Old
+    //private float shakeDuration = 0f;
+
+    //public float shakeAmount = 0.7f;
+    //public float decreaseFactor = 1.0f;
+
+    //void Update()
+    //{
+    //    if (shakeDuration > 0)
+    //    {
+    //        camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
+
+    //        shakeDuration -= Time.deltaTime * decreaseFactor;
+    //    }
+    //    else
+    //    {
+    //        shakeDuration = 0f;
+    //        camTransform.localPosition = originalPos;
+    //    }
+    //}
+    #endregion
 }

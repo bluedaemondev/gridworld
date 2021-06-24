@@ -54,8 +54,9 @@ public class EffectFactory : MonoBehaviour
         }
     }
 
-    public void ShakeCamera(float time)
+    public void ShakeCamera(float time, float scale)
     {
-        this.shaker.ShakeCameraFor(time);
+        this.shaker.ShakeCameraFor(time, scale);
     }
+    
 }

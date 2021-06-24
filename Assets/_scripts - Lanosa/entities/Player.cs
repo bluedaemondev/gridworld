@@ -144,6 +144,7 @@ namespace Entities
         public override void Destroy()
         {
             Debug.Log("lose");
+            EffectFactory.instance.ShakeCamera(3f, 1.2f);
             LevelManager.instance.Lose();
         }
     }
