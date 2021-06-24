@@ -127,6 +127,7 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
             _myRigidbody.isKinematic = false;
 
         _animator.enabled = false;
+        _chaser.ToggleNavMeshAgent(false);
 
         Component[] components = GetComponentsInChildren(typeof(Transform));
 
@@ -146,6 +147,7 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
             _myRigidbody.isKinematic = true;
 
         _animator.enabled = false;
+        _chaser.ToggleNavMeshAgent(true);
 
         Component[] components = GetComponentsInChildren(typeof(Transform));
 

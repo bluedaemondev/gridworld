@@ -13,6 +13,12 @@ public class TargetChaser : MonoBehaviour
     [SerializeField] private float _delay = 0.5f;
     public float midDistAttack = 1f;
     
+    public void ToggleNavMeshAgent(bool newState)
+    {
+        this._myAgent.enabled = newState;
+        Debug.Log(newState ? "chase" : "stay, ragdoll");
+    }
+
     public void Init(EnemyChaser enemy)
     {
         this._enemy = enemy;
@@ -32,7 +38,7 @@ public class TargetChaser : MonoBehaviour
 
         var entity = _target.GetComponent<IDamageable>();
 
-        while (!this._enemy.IsDead() && !entity.IsDead())
+        while (!this._enemy.IsDead() && !entity.IsDead() && _myAgent.enabled)
         {
             if (_myAgent.SetDestination(_target.position))
             {
