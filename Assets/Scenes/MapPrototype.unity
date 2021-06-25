@@ -21886,17 +21886,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1543837725}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2145749500}
     - target: {fileID: 9090039637037126464, guid: b2f44d31ca75ee14f80ac63e55320a73,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1490014688594724021, guid: 6444fef9c9b06ce4abf7a4635d326a27,
         type: 3}
-    - target: {fileID: 9090039637037126469, guid: b2f44d31ca75ee14f80ac63e55320a73,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 2145749500}
     - target: {fileID: 9090039637545295032, guid: b2f44d31ca75ee14f80ac63e55320a73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27903,25 +27902,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1800202137 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7979135845534765252, guid: 4e199766ffd578e40a2bb10731aecf0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 7979135846488044125}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1800202139
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800202137}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.232148, y: 1.2763996, z: 1.232148}
-  m_Center: {x: -0.0000003874302, y: 0.6365329, z: -0.0000001490116}
 --- !u!1 &1829392754
 GameObject:
   m_ObjectHideFlags: 0
@@ -30034,17 +30014,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1543837725}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1461059090}
     - target: {fileID: 9090039637037126464, guid: b2f44d31ca75ee14f80ac63e55320a73,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1490014688594724021, guid: 6444fef9c9b06ce4abf7a4635d326a27,
         type: 3}
-    - target: {fileID: 9090039637037126469, guid: b2f44d31ca75ee14f80ac63e55320a73,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1461059090}
     - target: {fileID: 9090039637545295032, guid: b2f44d31ca75ee14f80ac63e55320a73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31109,6 +31088,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1490014688594724021, guid: 6444fef9c9b06ce4abf7a4635d326a27,
         type: 3}
+    - target: {fileID: 1870622891234132888, guid: 072820ad52603414788ff20250771870,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1870622891234132890, guid: 072820ad52603414788ff20250771870,
         type: 3}
       propertyPath: damageAnimationName
@@ -31130,6 +31114,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1490014688594724021, guid: 6444fef9c9b06ce4abf7a4635d326a27,
         type: 3}
+    - target: {fileID: 1870622891783195748, guid: 072820ad52603414788ff20250771870,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1870622891783195750, guid: 072820ad52603414788ff20250771870,
         type: 3}
       propertyPath: m_Mesh
@@ -31310,6 +31299,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194234155}
     m_Modifications:
+    - target: {fileID: 7979135844976271160, guid: 4e199766ffd578e40a2bb10731aecf0e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7979135845348182800, guid: 4e199766ffd578e40a2bb10731aecf0e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -31429,7 +31423,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7979135845348182806, guid: 4e199766ffd578e40a2bb10731aecf0e, type: 3}
     - {fileID: 7979135846075109193, guid: 4e199766ffd578e40a2bb10731aecf0e, type: 3}
-    - {fileID: 7979135845534765254, guid: 4e199766ffd578e40a2bb10731aecf0e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4e199766ffd578e40a2bb10731aecf0e, type: 3}
 --- !u!224 &8147067891563298546
 RectTransform:
