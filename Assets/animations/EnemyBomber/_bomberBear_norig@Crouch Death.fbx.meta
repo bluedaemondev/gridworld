@@ -1,0 +1,482 @@
+fileFormatVersion: 2
+guid: 034d469fc05ea454d81e65cccc31ea5c
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: -203655887218126122
+    second: mixamo.com
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: teddy_bears:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:Spine2
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teddy_bears:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: bomberBear_rigged(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:Mesh
+      parentName: bomberBear_rigged(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:Hips
+      parentName: bomberBear_rigged(Clone)
+      position: {x: 0.00000062995167, y: 0.0025977506, z: -0.00009680977}
+      rotation: {x: 0.00000036141316, y: -0.000010167591, z: -0.000087918925, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:Spine
+      parentName: teddy_bears:Hips
+      position: {x: -0, y: 0.00046424687, z: 0.000005740523}
+      rotation: {x: 0.0061818105, y: 0.0000107108835, z: 0.0000878544, w: 0.9999809}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:Spine1
+      parentName: teddy_bears:Spine
+      position: {x: -0, y: 0.0005416628, z: 1.095457e-14}
+      rotation: {x: 2.3341946e-26, y: -3.419585e-14, z: 6.825959e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:Spine2
+      parentName: teddy_bears:Spine1
+      position: {x: -0, y: 0.0006190436, z: 6.3643535e-14}
+      rotation: {x: 0, y: -0, z: -7.88861e-30, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:Neck
+      parentName: teddy_bears:Spine2
+      position: {x: -0, y: 0.0006964233, z: 5.3216603e-10}
+      rotation: {x: -0.0061820988, y: -8.115118e-21, z: 8.136686e-20, w: 0.9999809}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:Head
+      parentName: teddy_bears:Neck
+      position: {x: -0, y: 0.0011440426, z: 0.00021326839}
+      rotation: {x: 0.0000000060248326, y: -1.3552527e-20, z: 8.1651714e-29, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:HeadTop_End
+      parentName: teddy_bears:Head
+      position: {x: -0, y: 0.0038653356, z: 0.0007205617}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightShoulder
+      parentName: teddy_bears:Spine2
+      position: {x: 0.0006815451, y: 0.00056829455, z: 0.000017314507}
+      rotation: {x: 0.5494436, y: 0.4475823, z: -0.5356124, w: 0.45923978}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightArm
+      parentName: teddy_bears:RightShoulder
+      position: {x: 5.5523804e-13, y: 0.0013679555, z: 2.6754699e-12}
+      rotation: {x: -0.08902685, y: 0.00595846, z: -0.013374356, w: 0.9959216}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightForeArm
+      parentName: teddy_bears:RightArm
+      position: {x: -2.1020984e-12, y: 0.0007132103, z: -2.8800738e-13}
+      rotation: {x: -0.0000003616531, y: -0.0041756243, z: -0.0000004609719, w: 0.9999913}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightHand
+      parentName: teddy_bears:RightForeArm
+      position: {x: 1.05969676e-13, y: 0.0008786567, z: -1.1656315e-12}
+      rotation: {x: 0.00000032625968, y: -0.0016162695, z: -0.0000001288129, w: 0.9999987}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightHandIndex1
+      parentName: teddy_bears:RightHand
+      position: {x: -3.88934e-12, y: 0.00033202328, z: -5.619721e-13}
+      rotation: {x: 0.00000027114146, y: -0.27855584, z: 0.00000003552081, w: 0.96042}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightHandIndex2
+      parentName: teddy_bears:RightHandIndex1
+      position: {x: 1.1857182e-13, y: 0.000110141445, z: 1.1203089e-12}
+      rotation: {x: 0.57448816, y: 0.000000029175144, z: -0.067586675, w: 0.8157177}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightHandIndex3
+      parentName: teddy_bears:RightHandIndex2
+      position: {x: -0.000009819251, y: 0.000029910767, z: -0.00008490866}
+      rotation: {x: 0.004499382, y: -0.44724098, z: -0.15837912, w: 0.88026774}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightHandIndex4
+      parentName: teddy_bears:RightHandIndex3
+      position: {x: -0.000030671417, y: 0.00000477781, z: -0.000014847222}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftShoulder
+      parentName: teddy_bears:Spine2
+      position: {x: -0.0006815451, y: 0.0005679056, z: -0.000014138843}
+      rotation: {x: 0.53703076, y: -0.45799562, z: 0.5484491, w: 0.4483766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftArm
+      parentName: teddy_bears:LeftShoulder
+      position: {x: 8.1138763e-13, y: 0.0013679555, z: 2.659084e-12}
+      rotation: {x: -0.089520246, y: 0.0019910648, z: -0.010778544, w: 0.9959247}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftForeArm
+      parentName: teddy_bears:LeftArm
+      position: {x: -3.206302e-13, y: 0.0007091023, z: -1.2482937e-12}
+      rotation: {x: -0.00000001468951, y: -0.0015607077, z: 0.00000022941597, w: 0.9999988}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftHand
+      parentName: teddy_bears:LeftForeArm
+      position: {x: -4.1768143e-13, y: 0.0008787002, z: -8.4577674e-13}
+      rotation: {x: -0.00000035321224, y: -0.0000036711144, z: 0.00000001879558, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftHandIndex1
+      parentName: teddy_bears:LeftHand
+      position: {x: -1.6044498e-13, y: 0.00021520004, z: 1.7399192e-13}
+      rotation: {x: -0.00000029717486, y: -0.029664684, z: -0.000000040586205, w: 0.99955994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftHandIndex2
+      parentName: teddy_bears:LeftHandIndex1
+      position: {x: -1.1788792e-13, y: 0.00014862926, z: 3.053423e-12}
+      rotation: {x: 0.15635008, y: 0.00000008144765, z: 0.3126999, w: 0.9368956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftHandIndex3
+      parentName: teddy_bears:LeftHandIndex2
+      position: {x: 0.000038454145, y: 0.000049033322, z: -0.00001861169}
+      rotation: {x: -0.093764566, y: 0.20959142, z: 0.352996, w: 0.9070135}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftHandIndex4
+      parentName: teddy_bears:LeftHandIndex3
+      position: {x: 0.000012195661, y: 0.0000015172569, z: 0.000002335008}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightUpLeg
+      parentName: teddy_bears:Hips
+      position: {x: 0.0014598834, y: -0.00025619342, z: 0.000020083784}
+      rotation: {x: 0.00020307861, y: 0.10676232, z: 0.9942795, w: -0.0031777066}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightLeg
+      parentName: teddy_bears:RightUpLeg
+      position: {x: 4.7762516e-13, y: 0.0013523981, z: -7.753853e-13}
+      rotation: {x: -0.26976293, y: 0.00088809733, z: -0.007394731, w: 0.96289796}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightFoot
+      parentName: teddy_bears:RightLeg
+      position: {x: -1.0140555e-13, y: 0.0010717225, z: 4.912909e-12}
+      rotation: {x: 0.819211, y: 0.0017219599, z: 0.007638309, w: 0.57343876}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightToeBase
+      parentName: teddy_bears:RightFoot
+      position: {x: -1.4502122e-13, y: 0.00044586943, z: -1.9970195e-13}
+      rotation: {x: -0.007930006, y: 0.00007094957, z: -0.0089463405, w: 0.99992853}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:RightToe_End
+      parentName: teddy_bears:RightToeBase
+      position: {x: -5.1698646e-14, y: 0.00024222034, z: 8.1872876e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftUpLeg
+      parentName: teddy_bears:Hips
+      position: {x: -0.0014598834, y: -0.00025619342, z: 0.0000077682735}
+      rotation: {x: -0.0001260828, y: 0.11190335, z: 0.99371374, w: 0.003254037}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftLeg
+      parentName: teddy_bears:LeftUpLeg
+      position: {x: -2.0733636e-13, y: 0.0013528152, z: 1.114564e-12}
+      rotation: {x: -0.27509007, y: -0.00091438036, z: 0.0074182395, w: 0.9613894}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftFoot
+      parentName: teddy_bears:LeftLeg
+      position: {x: 7.641887e-14, y: 0.0010750155, z: -3.0926527e-12}
+      rotation: {x: 0.81892854, y: -0.0017485375, z: -0.0072992207, w: 0.57384646}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftToeBase
+      parentName: teddy_bears:LeftFoot
+      position: {x: 5.98388e-14, y: 0.00049601996, z: -7.560015e-14}
+      rotation: {x: -0.0070788786, y: -0.000060608323, z: 0.00856109, w: 0.9999383}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teddy_bears:LeftToe_End
+      parentName: teddy_bears:LeftToeBase
+      position: {x: -3.5070833e-14, y: 0.00024492564, z: -1.7513018e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 8dff19641151a5c49af0f853af60f147,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
