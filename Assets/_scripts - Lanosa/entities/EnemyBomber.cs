@@ -33,6 +33,9 @@ public class EnemyBomber : Entity, IAttacker, IMovable, IExplodable
     public float distanceMinExplode = 5;
     public float distanceMaxLoseSight = 8;
 
+    [Range(0, 1f)]
+    public float easterEggChance = 0.05f;
+
     public void Init()
     {
         this._health = new Health(25);
@@ -50,6 +53,19 @@ public class EnemyBomber : Entity, IAttacker, IMovable, IExplodable
 
         _chaser.Init(this);
         _chaser.StartChasingTarget(LevelManager.instance.player);
+
+        DecideIfWannaDanceThriller();
+    }
+
+    private void DecideIfWannaDanceThriller()
+    {
+        float rand = Random.Range(0, 1f);
+        if (rand < easterEggChance)
+        {
+            Debug.Log("we\'ve got a dancing bear, boii");
+            this._animator.SetTrigger(danceTriggerName);
+            _chaser.StartChasingTarget(transform);
+        }
     }
 
     public void Attack()
@@ -60,6 +76,8 @@ public class EnemyBomber : Entity, IAttacker, IMovable, IExplodable
     public void Explode()
     {
         Debug.Log("explosion");
+        _animator.SetTrigger("explode");
+
         EffectFactory.instance.ZoomCamera(-2, 0.05f);
         EffectFactory.instance.InstantiateEffectAt(explosionPrefab, transform.position, transform.rotation, LevelManager.instance.enemiesContainer);
 
@@ -94,6 +112,7 @@ public class EnemyBomber : Entity, IAttacker, IMovable, IExplodable
     public override void Start()
     {
         base.Start();
+
         Init();
     }
 
