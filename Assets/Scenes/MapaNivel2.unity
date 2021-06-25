@@ -18807,6 +18807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1584834957}
   - component: {fileID: 1584834958}
+  - component: {fileID: 1584834959}
   m_Layer: 0
   m_Name: HudManager
   m_TagString: Untagged
@@ -18845,6 +18846,18 @@ MonoBehaviour:
   mainHud: {fileID: 0}
   pauseUI: {fileID: 284667141}
   enemiesRemainingUi: {fileID: 1307408832}
+--- !u!114 &1584834959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584834956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bcb9aa7698fec4b8a9e0570741b04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1630027265
 GameObject:
   m_ObjectHideFlags: 0
