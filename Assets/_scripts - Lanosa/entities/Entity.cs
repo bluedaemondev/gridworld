@@ -25,6 +25,7 @@ public abstract class Entity : MonoBehaviour , IDamageable
 
     public virtual void Die()
     {
+        this._health.Die();
         Debug.Log("Dying");
     }
 

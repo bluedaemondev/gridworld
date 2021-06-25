@@ -46,6 +46,7 @@ public class Health : IDamageable
 
     public void Die()
     {
+        health = 0;
         OnDead?.Invoke(this, EventArgs.Empty);
     }
 

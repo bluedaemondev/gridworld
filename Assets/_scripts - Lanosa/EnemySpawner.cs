@@ -84,7 +84,11 @@ public class EnemySpawner : Entity
     public override float TakeDamage(float value)
     {
         value = base.TakeDamage(value);
-        this._animator.Play(damageAnimationName);
+        if (!this.IsDead())
+        {
+            this._animator.Play(damageAnimationName);
+        }
+        else { Die(); }
 
         return value;
     }

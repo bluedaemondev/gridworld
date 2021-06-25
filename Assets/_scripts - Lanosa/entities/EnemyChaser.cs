@@ -28,6 +28,7 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     [SerializeField] private string attackAnimationName = "Attack";
 
     public bool canMove = true;
+    public int stepSoundChance = 15;
 
     public void Init()
     {
@@ -97,7 +98,9 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     }
     public void SoundStep()
     {
-        SoundManager.instance.PlayAmbient(LevelManager.instance.soundAssets.stepPlayer);
+        int rand = UnityEngine.Random.Range(0, 100);
+        if (rand < stepSoundChance)
+            SoundManager.instance.PlayAmbient(LevelManager.instance.soundAssets.stepPlayer);
     }
     /// <summary>
     /// metodo para animacion

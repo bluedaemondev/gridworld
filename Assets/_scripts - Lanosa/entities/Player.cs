@@ -37,6 +37,8 @@ namespace Entities
         }
         public void Attack()
         {
+            Debug.Log(this._health.GetHealth());
+
             if (!this._health.IsDead() && !_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             {    //this._animator.SetBool(attackBoolParam, true);
                 this._animator.Play(attackAnimationName);
@@ -94,9 +96,11 @@ namespace Entities
         public override void Die()
         {
             base.Die();
-            healthBar.SetHealth(0);
+            healthBar.SetHealth(_health.GetHealth());
 
             this._animator.SetTrigger(dieTrigger);
+            this._animator.SetBool("dead", true);
+
             this._animator.Play(dyingAnimationName);
             controller.canMove = false;
             SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.dyingPlayer);
