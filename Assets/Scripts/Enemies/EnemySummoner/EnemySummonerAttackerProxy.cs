@@ -9,7 +9,7 @@ public class EnemySummonerAttackerProxy : MonoBehaviour
 
     public void Attack()
     {
-        SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.attackSoundShooter);
+        SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.attackSoundSummoner);
 
         controlledBehaviour.SummonEnemy();
     }
