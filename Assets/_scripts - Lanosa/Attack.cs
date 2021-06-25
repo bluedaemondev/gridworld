@@ -23,6 +23,17 @@ public class Attack : MonoBehaviour
         if (hitHealth != null)
         {
             hitHealth.TakeDamage(_damage);
+            if (!hitHealth.IsDead())
+                StartCoroutine(MicroSlowmo());
         }
+    }
+
+    IEnumerator MicroSlowmo()
+    {
+        Time.timeScale = Random.Range(0.25f, 0.8f);
+        EffectFactory.instance.ZoomCamera(4.3f, 0.1f);
+
+        yield return new WaitForSecondsRealtime(0.1f);
+        Time.timeScale = 1;
     }
 }

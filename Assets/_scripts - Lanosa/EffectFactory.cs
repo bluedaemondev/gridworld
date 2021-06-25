@@ -10,6 +10,8 @@ public class EffectFactory : MonoBehaviour
     public CameraShake shaker;
     public Camera mainCam;
 
+    float originalFov;
+
 
     //public struct CameraShakeInfo
     //{
@@ -38,6 +40,7 @@ public class EffectFactory : MonoBehaviour
         if (shaker == null)
             shaker = mainCam.GetComponent<CameraShake>();
 
+        originalFov = mainCam.fieldOfView;
     }
 
     public void InstantiateEffectAt(GameObject prefabEffect, Vector3 position, Quaternion rotation, Transform parent = null)
@@ -58,5 +61,20 @@ public class EffectFactory : MonoBehaviour
     {
         this.shaker.ShakeCameraFor(time, scale);
     }
-    
+    /// <summary>
+    /// Recibe +10, -10, o el numero que sea para sumar al FOV
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <param name="time"></param>
+    public void ZoomCamera(float amount, float time)
+    {
+        StartCoroutine(SetCameraFov(amount, time));
+    }
+    IEnumerator SetCameraFov(float amount, float time)
+    {
+        this.mainCam.fieldOfView = originalFov - amount;
+        yield return new WaitForSecondsRealtime(time);
+        this.mainCam.fieldOfView = originalFov;
+    }
+
 }
