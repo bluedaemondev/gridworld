@@ -15,6 +15,9 @@ public class ExplosionSphere : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out IDamageable target))
+        {
             target.TakeDamage(Damage);
+            ((MonoBehaviour)target).GetComponent<Rigidbody>().AddExplosionForce(Damage * 0.8f, transform.position, this.GetComponent<SphereCollider>().radius);
+        }
     }
 }
