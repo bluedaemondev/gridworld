@@ -27,11 +27,10 @@ public class CameraShake : MonoBehaviour
     IEnumerator CamShakeRoutine(float duration, float amount)
     {
         float endTime = Time.time + duration;
-
         while (Time.time < endTime)
         {
             camTransform.position = originalPos + Random.insideUnitSphere * amount;
-
+            
             duration -= Time.deltaTime;
 
             yield return null;
