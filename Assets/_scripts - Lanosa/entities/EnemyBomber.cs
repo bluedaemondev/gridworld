@@ -131,5 +131,9 @@ public class EnemyBomber : Entity, IAttacker, IMovable, IExplodable
 
         Init();
     }
+    public override void Destroy()
+    {
+        Destroy(this.gameObject, 1.5f);
+    }
 
 }
