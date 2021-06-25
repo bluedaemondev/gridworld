@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,5 +36,10 @@ public class Common
         }
 
         return result;
+    }
+
+    public static float DistanceBetweenPoints(Vector3 aVec, Vector3 bVec)
+    {
+        return Vector3.Distance(aVec, bVec);
     }
 }

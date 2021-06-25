@@ -14,5 +14,7 @@ public class EntityLibrarySO : ScriptableObject
     public GameObject explodingBarrel_Prefab;
     public GameObject enemyShooter_Prefab;
     public GameObject enemySummoner_Prefab;
-    
+    public GameObject enemyBomber_Prefab;
+
+
 }
