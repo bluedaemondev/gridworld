@@ -57,7 +57,7 @@ public class EnemySpawner : Entity
             SpawnEnemy();
             _animator.Play(spawnAnimationName);
 
-            yield return new WaitForSecondsRealtime(spawnAfter);
+            yield return new WaitForSeconds(spawnAfter);
         }
     }
 

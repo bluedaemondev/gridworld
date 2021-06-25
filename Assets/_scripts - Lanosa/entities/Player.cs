@@ -21,6 +21,7 @@ namespace Entities
         [SerializeField] private PlatformerMovementController controller;
         
         public string attackButton = "Fire1";
+        public string pauseButton = "Cancel";
         public HealthBar healthBar;
 
         //public string attackTriggerName = "Attack";
@@ -68,6 +69,10 @@ namespace Entities
             if (Input.GetButtonDown(attackButton))
             {
                 Attack();
+            }
+            if (Input.GetButtonDown(pauseButton))
+            {
+                LevelManager.instance.hudManager.Pause();
             }
         }
 

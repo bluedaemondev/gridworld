@@ -266,6 +266,7 @@ MonoBehaviour:
   dieTrigger: die
   controller: {fileID: 8961242087494781387}
   attackButton: Fire1
+  pauseButton: Cancel
   healthBar: {fileID: 0}
 --- !u!1 &1310952359440550279
 GameObject:

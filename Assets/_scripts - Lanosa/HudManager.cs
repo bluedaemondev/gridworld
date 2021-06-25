@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Managers
         public GameObject loseUI;
         public GameObject winUI;
         public GameObject mainHud;
+        public GameObject pauseUI;
 
         public EnemiesRemainingUI enemiesRemainingUi;
 
@@ -32,6 +34,25 @@ namespace Managers
         {
             this.winUI.SetActive(true);
             CursorLocker.instance.UnlockFreeCursor();
+        }
+
+        public void Pause()
+        {
+            if (pauseUI.activeSelf)
+            {
+                pauseUI.SetActive(false);
+                CursorLocker.instance.LockCursorOnCenter();
+                LevelManager.instance.SetToTimeScale(1);
+
+            }
+            else
+            {
+                pauseUI.SetActive(true);
+                CursorLocker.instance.UnlockFreeCursor();
+
+                LevelManager.instance.SetToTimeScale(0);
+            }
+
         }
     }
 }

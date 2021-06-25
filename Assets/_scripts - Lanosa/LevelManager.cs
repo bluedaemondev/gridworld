@@ -123,4 +123,8 @@ public class LevelManager : MonoBehaviour
         else
             Time.timeScale = 0.1f;
     }
+    public void SetToTimeScale(float scale)
+    {
+        Time.timeScale = scale;
+    }
 }
