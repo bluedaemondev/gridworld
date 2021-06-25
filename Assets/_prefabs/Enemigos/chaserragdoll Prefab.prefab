@@ -1271,6 +1271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 25
+  useEffects: 0
 --- !u!1 &4135661968739337659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6238,6 +6239,7 @@ MonoBehaviour:
   damagedAnimationName: Damaged
   attackAnimationName: Attack
   canMove: 1
+  stepSoundChance: 15
 --- !u!54 &636115997990290753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6970,6 +6972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455374260794521424, guid: a2194d6db7ff1804da4e44d22afe3155,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2194d6db7ff1804da4e44d22afe3155, type: 3}

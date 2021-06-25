@@ -5,21 +5,25 @@ using UnityEngine.AI;
 
 public class TargetChaser : MonoBehaviour
 {
-    [SerializeField] private EnemyChaser _enemy;
+    [SerializeField] private Entity _enemy;
 
     [SerializeField] private NavMeshAgent _myAgent;
     [SerializeField] private Transform _target;
     //[SerializeField] private Animator animator;
     [SerializeField] private float _delay = 0.5f;
     public float midDistAttack = 1f;
-    
+
+    public Entity GetTargetFollow()
+    {
+        return this._enemy;
+    }
     public void ToggleNavMeshAgent(bool newState)
     {
         this._myAgent.enabled = newState;
         Debug.Log(newState ? "chase" : "stay, ragdoll");
     }
 
-    public void Init(EnemyChaser enemy)
+    public void Init(Entity enemy)
     {
         this._enemy = enemy;
     }
@@ -34,7 +38,7 @@ public class TargetChaser : MonoBehaviour
 
     private IEnumerator Chase()
     {
-        this._enemy.Move();
+        ((IMovable)this._enemy).Move();
 
         var entity = _target.GetComponent<IDamageable>();
 
@@ -48,9 +52,9 @@ public class TargetChaser : MonoBehaviour
                 }
 
                 yield return new WaitForSeconds(_delay);
-                if(Vector3.Distance(transform.position, LevelManager.instance.player.position) <= midDistAttack)
+                if (Vector3.Distance(transform.position, LevelManager.instance.player.position) <= midDistAttack)
                 {
-                    this._enemy.Attack();
+                    ((IAttacker)this._enemy).Attack();
                 }
             }
             else
@@ -59,8 +63,12 @@ public class TargetChaser : MonoBehaviour
             }
         }
 
-        this._enemy.StopMoving();
-        this._enemy.EnableRagdollPhysics();
+        ((IMovable)this._enemy).StopMoving();
+
+        Debug.Log("revisar aca que pasa si no tengo ragdoll. null?");
+
+        if (this._enemy.GetComponent<IRagdoll>() != null)
+            ((IRagdoll)this._enemy).EnableRagdollPhysics();
 
     }
 }
