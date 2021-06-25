@@ -17,13 +17,21 @@ namespace Managers
             enemiesRemainingUi.UpdateUI(countRemaining, countMax);
         }
 
+        private void Start()
+        {
+            CursorLocker.instance.LockCursorOnCenter();
+        }
+
         public void DisplayLose()
         {
             this.loseUI.SetActive(true);
+            CursorLocker.instance.UnlockFreeCursor();
         }
+
         public void DisplayWin()
         {
             this.winUI.SetActive(true);
+            CursorLocker.instance.UnlockFreeCursor();
         }
     }
 }

@@ -91,9 +91,16 @@ public class PlatformerMovementController : MonoBehaviour
     {
         _player.SetAnimState(animatorJumpParameterName, false);
     }
-    public void SwitchCanMove()
+    public void PauseMovementFor(float time)
     {
-        this.canMove = !this.canMove;
+        StartCoroutine(this.DisableMovementFor(time));
+        //this.canMove = !this.canMove;
+    }
+    private IEnumerator DisableMovementFor(float time)
+    {
+        this.canMove = false;
+        yield return new WaitForSeconds(time);
+        this.canMove = true;
     }
     public void SoundStep()
     {

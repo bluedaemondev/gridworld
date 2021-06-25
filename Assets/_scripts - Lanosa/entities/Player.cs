@@ -81,6 +81,7 @@ namespace Entities
             value = base.TakeDamage(value);
             if (!this.IsDead())
             {
+                controller.PauseMovementFor(4 * Time.deltaTime);
                 //this._animator.Play(damagedAnimationName);
                 healthBar.SetHealth(value);
                 this._animator.Play(damagedAnimationName);
@@ -100,9 +101,10 @@ namespace Entities
 
             this._animator.SetTrigger(dieTrigger);
             this._animator.SetBool("dead", true);
+            controller.PauseMovementFor(999);
 
             this._animator.Play(dyingAnimationName);
-            controller.canMove = false;
+            //controller.canMove = false;
             SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.dyingPlayer);
 
             //EnableRagdollPhysics();

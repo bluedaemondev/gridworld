@@ -19,6 +19,8 @@ public class Cronometer : MonoBehaviour
 
     public void Init(float timeTicker)
     {
+        Time.timeScale = 1;
+
         this._currentTimer = 0;
         this._timeBetweenTicks = timeTicker;
 
