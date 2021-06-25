@@ -14,7 +14,7 @@ public class ExplosionSphere : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (TryGetComponent(out IDamageable target))
+        if (other.TryGetComponent(out IDamageable target))
             target.TakeDamage(Damage);
     }
 }
