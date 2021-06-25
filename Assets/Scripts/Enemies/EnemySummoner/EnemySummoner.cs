@@ -41,6 +41,8 @@ public class EnemySummoner : Entity, IRagdoll
 
         LevelManager.instance.RemoveEnemyFromAccountance(this);
 
+        Destroy(this.gameObject, 3f);
+
     }
 
     public void EnableRagdollPhysics()
