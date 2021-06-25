@@ -68,7 +68,8 @@ public class EffectFactory : MonoBehaviour
     /// <param name="time"></param>
     public void ZoomCamera(float amount, float time)
     {
-        StartCoroutine(SetCameraFov(amount, time));
+        if (mainCam.fieldOfView == originalFov)
+            StartCoroutine(SetCameraFov(amount, time));
     }
     IEnumerator SetCameraFov(float amount, float time)
     {

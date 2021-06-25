@@ -6,6 +6,7 @@ public class Attack : MonoBehaviour
 {
     [SerializeField]
     private int _damage;
+    public bool useEffects = false;
 
     //private void OnCollisionEnter(Collision collision)
     //{
@@ -23,7 +24,7 @@ public class Attack : MonoBehaviour
         if (hitHealth != null)
         {
             hitHealth.TakeDamage(_damage);
-            if (!hitHealth.IsDead())
+            if (!hitHealth.IsDead() && useEffects)
                 StartCoroutine(MicroSlowmo());
         }
     }

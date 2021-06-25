@@ -1302,6 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 25
+  useEffects: 1
 --- !u!1 &8961242087606000446
 GameObject:
   m_ObjectHideFlags: 0
