@@ -56,6 +56,21 @@ public class EnemyBomber : Entity, IAttacker, IMovable, IExplodable
 
         DecideIfWannaDanceThriller();
     }
+    public override float TakeDamage(float value)
+    {
+        value = base.TakeDamage(value);
+        
+        if (_health.IsDead())
+        {
+            _animator.SetTrigger(deadTriggerName);
+        }
+        return value;
+    }
+    public override void Die()
+    {
+        base.Die();
+        LevelManager.instance.RemoveEnemyFromAccountance(this);
+    }
 
     private void DecideIfWannaDanceThriller()
     {
@@ -67,7 +82,6 @@ public class EnemyBomber : Entity, IAttacker, IMovable, IExplodable
             _chaser.StartChasingTarget(transform);
         }
     }
-
     public void Attack()
     {
         if (!this._health.IsDead())
@@ -77,6 +91,8 @@ public class EnemyBomber : Entity, IAttacker, IMovable, IExplodable
     {
         Debug.Log("explosion");
         _animator.SetTrigger("explode");
+
+        LevelManager.instance.RemoveEnemyFromAccountance(this);
 
         EffectFactory.instance.ZoomCamera(-2, 0.05f);
         EffectFactory.instance.InstantiateEffectAt(explosionPrefab, transform.position, transform.rotation, LevelManager.instance.enemiesContainer);
