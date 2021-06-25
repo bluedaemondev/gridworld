@@ -4328,7 +4328,7 @@ PrefabInstance:
     - target: {fileID: 2900504679057734024, guid: 47b659f7faa5cab47af6b06329b10a96,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2966290612551714279, guid: 47b659f7faa5cab47af6b06329b10a96,
         type: 3}
@@ -4695,6 +4695,12 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 6584619674754195911, guid: 47b659f7faa5cab47af6b06329b10a96,
+        type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 6933094582235015101, guid: 5b33848e99c3784419c46e7336e4a067,
+        type: 3}
     - target: {fileID: 6727954803661498061, guid: 47b659f7faa5cab47af6b06329b10a96,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -6324,7 +6330,7 @@ PrefabInstance:
     - target: {fileID: 9090039637545295035, guid: b2f44d31ca75ee14f80ac63e55320a73,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9090039637545295035, guid: b2f44d31ca75ee14f80ac63e55320a73,
         type: 3}
@@ -8084,6 +8090,12 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 6584619674754195911, guid: 47b659f7faa5cab47af6b06329b10a96,
+        type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 6933094582235015101, guid: 5b33848e99c3784419c46e7336e4a067,
+        type: 3}
     - target: {fileID: 6727954803661498061, guid: 47b659f7faa5cab47af6b06329b10a96,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -8708,7 +8720,7 @@ PrefabInstance:
     - target: {fileID: 9090039637545295035, guid: b2f44d31ca75ee14f80ac63e55320a73,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9090039637545295035, guid: b2f44d31ca75ee14f80ac63e55320a73,
         type: 3}
@@ -17322,6 +17334,12 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 6584619674754195911, guid: 47b659f7faa5cab47af6b06329b10a96,
+        type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 6933094582235015101, guid: 5b33848e99c3784419c46e7336e4a067,
+        type: 3}
     - target: {fileID: 6727954803661498061, guid: 47b659f7faa5cab47af6b06329b10a96,
         type: 3}
       propertyPath: m_LocalRotation.x
