@@ -8420,17 +8420,18 @@ GameObject:
   - component: {fileID: 681054340}
   - component: {fileID: 681054339}
   - component: {fileID: 681054338}
-  - component: {fileID: 681054337}
   - component: {fileID: 681054342}
+  - component: {fileID: 681054337}
+  - component: {fileID: 681054343}
   m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &681054337
-MeshCollider:
+--- !u!65 &681054337
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8439,10 +8440,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 1049400453}
+  serializedVersion: 2
+  m_Size: {x: 57.685577, y: 0, z: 119.22348}
+  m_Center: {x: -0.39487553, y: -25.035995, z: 20.877745}
 --- !u!114 &681054338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8586,6 +8586,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   triggerName: die
+--- !u!65 &681054343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681054336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 57.685577, y: 0, z: 119.22348}
+  m_Center: {x: -0.39487553, y: -25.035995, z: 20.877745}
 --- !u!1001 &688679582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13974,7 +13987,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16710
+  m_Name: pb_Mesh16760
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
