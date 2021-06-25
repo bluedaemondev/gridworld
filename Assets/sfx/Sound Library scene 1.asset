@@ -17,9 +17,9 @@ MonoBehaviour:
   attackSoundShooter: {fileID: 8300000, guid: bfb520e8255e9c04bbc8545f331898c0, type: 3}
   attackSoundSummoner: {fileID: 8300000, guid: 3fa0a8f185a29244cb54ea177c48304d, type: 3}
   punchSoundImpact: {fileID: 8300000, guid: 86061a054d69735428c1d79a9580d741, type: 3}
-  explosionSound: {fileID: 8300000, guid: bfb520e8255e9c04bbc8545f331898c0, type: 3}
+  explosionSound: {fileID: 8300000, guid: a4bfa8a68134016428b3440adb230b78, type: 3}
   stepPlayer: {fileID: 8300000, guid: 0b77e448aff516343a876c0a5e1eb9b1, type: 3}
-  spawnEnemy: {fileID: 8300000, guid: d2ce50f97f884c941a4111a781899ef7, type: 3}
+  spawnEnemy: {fileID: 8300000, guid: 80c6622653bd1d34fba86730abaa7105, type: 3}
   dyingEnemyChaser: {fileID: 8300000, guid: 5ea71d49bc9749d4f90fd0ef83341409, type: 3}
   dyingEnemyShooter: {fileID: 8300000, guid: 5ea71d49bc9749d4f90fd0ef83341409, type: 3}
   dyingEnemySummoner: {fileID: 8300000, guid: 5ea71d49bc9749d4f90fd0ef83341409, type: 3}
