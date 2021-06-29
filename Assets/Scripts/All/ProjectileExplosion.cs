@@ -14,11 +14,7 @@ public class ProjectileExplosion : MonoBehaviour
     private float upforce = 1f;
 
     private Collider[] hitColliders;
-    private void OnCollisionEnter(Collision collision)
-    {
-       
-    }
-
+    
     private void Explode(Vector3 explosionPoint)
     {
         hitColliders = Physics.OverlapSphere(explosionPoint, blastRadius);

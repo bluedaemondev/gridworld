@@ -18,7 +18,7 @@ public class PlatformerMovementController : MonoBehaviour
     public Animator animator;
     public string movementSpeedParameterName = "movementSpeed";
     public string animatorJumpParameterName = "jumping";
-    public bool canMove = true;
+
     [SerializeField]
     private Transform cameraTransform;
 
@@ -31,61 +31,71 @@ public class PlatformerMovementController : MonoBehaviour
 
     [SerializeField] Entities.Player _player;
 
+    private System.Action ArtificialFUpdate;
+    private System.Action InputHandler;
+
+    private void Start()
+    {
+        InputHandler = CheckControls;
+        ArtificialFUpdate = Move;
+    }
     void Update()
     {
-        if (canMove)
-        {
-            inputVector = Input.GetAxis(horizontalAxis) * cameraTransform.right;
-
-            Vector3 fixedCameraForward = cameraTransform.forward;
-            fixedCameraForward.y = 0;
-            fixedCameraForward.Normalize();
-
-            inputVector += Input.GetAxis(verticalAxis) * fixedCameraForward;
-
-            if (inputVector.magnitude > 1f)
-            {
-                inputVector.Normalize();
-            }
-
-            animator.SetFloat(movementSpeedParameterName, inputVector.magnitude);
-
-            currentTimerJumpCommand -= Time.deltaTime;
-            var grounded = Physics.OverlapBox(transform.position, transform.localScale * 0.5f, Quaternion.identity, groundLayer);
-            bool isJumpFrame = false;
-
-            if (Input.GetButtonDown(jumpButton))
-            {
-                _player.SetAnimState(animatorJumpParameterName, true);
-                currentTimerJumpCommand = jumpCommandGracePeriod;
-                var pendingJump = currentTimerJumpCommand > 0;
-
-                //Debug.Log("grounded " + grounded.Length);
-
-                if (grounded.Length > 0 && pendingJump)
-                {
-                    myRigidbody.AddForce(jumpForce * Vector3.up, jumpForceMode);
-                    currentTimerJumpCommand = 0;
-                    isJumpFrame = true;
-                }
-            }
-
-            if (grounded.Length > 0 && !isJumpFrame)
-            { StopJumping(); }
-        }
+        InputHandler();
     }
-
     private void FixedUpdate()
     {
-        if (canMove)
-        {
-            if (inputVector.sqrMagnitude > 0f)
-            {
-                transform.LookAt(transform.position + inputVector);
-            }
+        ArtificialFUpdate();
+    }
 
-            myRigidbody.MovePosition(transform.position + inputVector * (movementSpeed * Time.deltaTime));
+    void CheckControls()
+    {
+        inputVector = Input.GetAxis(horizontalAxis) * cameraTransform.right;
+
+        Vector3 fixedCameraForward = cameraTransform.forward;
+        fixedCameraForward.y = 0;
+        fixedCameraForward.Normalize();
+
+        inputVector += Input.GetAxis(verticalAxis) * fixedCameraForward;
+
+        if (inputVector.magnitude > 1f)
+        {
+            inputVector.Normalize();
         }
+
+        animator.SetFloat(movementSpeedParameterName, inputVector.magnitude);
+
+        currentTimerJumpCommand -= Time.deltaTime;
+        var grounded = Physics.OverlapBox(transform.position, transform.localScale * 0.5f, Quaternion.identity, groundLayer);
+        bool isJumpFrame = false;
+
+        if (Input.GetButtonDown(jumpButton))
+        {
+            _player.SetAnimState(animatorJumpParameterName, true);
+            currentTimerJumpCommand = jumpCommandGracePeriod;
+            var pendingJump = currentTimerJumpCommand > 0;
+
+            //Debug.Log("grounded " + grounded.Length);
+
+            if (grounded.Length > 0 && pendingJump)
+            {
+                myRigidbody.AddForce(jumpForce * Vector3.up, jumpForceMode);
+                currentTimerJumpCommand = 0;
+                isJumpFrame = true;
+            }
+        }
+
+        if (grounded.Length > 0 && !isJumpFrame)
+        { StopJumping(); }
+    }
+    void Move()
+    {
+        if (inputVector.sqrMagnitude > 0f)
+        {
+            transform.LookAt(transform.position + inputVector);
+        }
+
+        myRigidbody.MovePosition(transform.position + inputVector * (movementSpeed * Time.deltaTime));
     }
     public void StopJumping()
     {
@@ -94,13 +104,14 @@ public class PlatformerMovementController : MonoBehaviour
     public void PauseMovementFor(float time)
     {
         StartCoroutine(this.DisableMovementFor(time));
-        //this.canMove = !this.canMove;
     }
     private IEnumerator DisableMovementFor(float time)
     {
-        this.canMove = false;
+        //ArtificialFUpdate = 
+        InputHandler = () => { };
         yield return new WaitForSeconds(time);
-        this.canMove = true;
+        InputHandler = CheckControls;
+
     }
     public void SoundStep()
     {
