@@ -108,9 +108,10 @@ public class PlatformerMovementController : MonoBehaviour
     private IEnumerator DisableMovementFor(float time)
     {
         //ArtificialFUpdate = 
-        InputHandler = () => { };
+        InputHandler = ArtificialFUpdate = () => { };
         yield return new WaitForSeconds(time);
         InputHandler = CheckControls;
+        ArtificialFUpdate = Move;
 
     }
     public void SoundStep()

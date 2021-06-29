@@ -230,13 +230,12 @@ MonoBehaviour:
   movementSpeed: 6
   runMovementSpeed: 8
   jumpButton: Jump
-  jumpForce: 4
+  jumpForce: 6.1
   jumpForceMode: 2
   myRigidbody: {fileID: 8961242087494781384}
   animator: {fileID: 6317438929827768175}
   movementSpeedParameterName: movementSpeed
   animatorJumpParameterName: jumping
-  canMove: 1
   cameraTransform: {fileID: 0}
   groundLayer:
     serializedVersion: 2
