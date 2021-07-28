@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  cameraDistance: 3.75
+  cameraDistance: 5.32
   angle: 270
   cameraHeight: 3
   targetHeightOffset: 1.25

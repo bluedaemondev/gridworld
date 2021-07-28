@@ -5,7 +5,8 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     public GameObject rocket;
-    public Rigidbody myRigidBody;
+    public Rigidbody targetRigidBody;
+
     public float power = 10.0f;
     public float radius = 5.0f;
     public float upforce = 1.0f;
@@ -23,11 +24,11 @@ public class Explosion : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
         foreach(Collider hit in colliders)
         {
-            myRigidBody = hit.GetComponent<Rigidbody>();
+            targetRigidBody = hit.GetComponent<Rigidbody>();
 
-            if(myRigidBody != null)
+            if(targetRigidBody != null)
             {
-              myRigidBody.AddExplosionForce(power, explosionPosition, radius, upforce, ForceMode.Impulse);
+              targetRigidBody.AddExplosionForce(power, explosionPosition, radius, upforce, ForceMode.Impulse);
             }           
         }
     }
