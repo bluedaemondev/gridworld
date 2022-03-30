@@ -17,6 +17,7 @@ public class ExplosionSphere : MonoBehaviour
         if (other.TryGetComponent(out IDamageable target))
         {
             target.TakeDamage(Damage);
+            SoundManager.instance.PlayEffect(LevelManager.instance.soundAssets.explosionSound);
             ((MonoBehaviour)target).GetComponent<Rigidbody>().AddExplosionForce(Damage * 0.8f, transform.position, this.GetComponent<SphereCollider>().radius);
         }
     }

@@ -16,6 +16,7 @@ MonoBehaviour:
   attackSoundPlayer: {fileID: 8300000, guid: 09fbab2f3d7c4d14f9ffa7cc39098970, type: 3}
   attackSoundShooter: {fileID: 8300000, guid: bfb520e8255e9c04bbc8545f331898c0, type: 3}
   attackSoundSummoner: {fileID: 8300000, guid: 3fa0a8f185a29244cb54ea177c48304d, type: 3}
+  attackSoundGuard: {fileID: 8300000, guid: 09fbab2f3d7c4d14f9ffa7cc39098970, type: 3}
   punchSoundImpact: {fileID: 8300000, guid: 86061a054d69735428c1d79a9580d741, type: 3}
   explosionSound: {fileID: 8300000, guid: a4bfa8a68134016428b3440adb230b78, type: 3}
   stepPlayer: {fileID: 8300000, guid: 0b77e448aff516343a876c0a5e1eb9b1, type: 3}
@@ -23,6 +24,7 @@ MonoBehaviour:
   dyingEnemyChaser: {fileID: 8300000, guid: 5ea71d49bc9749d4f90fd0ef83341409, type: 3}
   dyingEnemyShooter: {fileID: 8300000, guid: 5ea71d49bc9749d4f90fd0ef83341409, type: 3}
   dyingEnemySummoner: {fileID: 8300000, guid: 5ea71d49bc9749d4f90fd0ef83341409, type: 3}
+  dyingEnemyGuard: {fileID: 8300000, guid: 5ea71d49bc9749d4f90fd0ef83341409, type: 3}
   dyingPlayer: {fileID: 8300000, guid: 5ea71d49bc9749d4f90fd0ef83341409, type: 3}
   healPickupSound: {fileID: 8300000, guid: c05ffc148fcbf6642b59fb7a83155e1f, type: 3}
   winSound: {fileID: 8300000, guid: 3467ea5552d22c2489a3f5620b199d88, type: 3}

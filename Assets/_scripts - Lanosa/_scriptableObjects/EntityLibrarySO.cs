@@ -15,6 +15,7 @@ public class EntityLibrarySO : ScriptableObject
     public GameObject enemyShooter_Prefab;
     public GameObject enemySummoner_Prefab;
     public GameObject enemyBomber_Prefab;
+    public GameObject enemyGuard_Prefab;
 
 
 }

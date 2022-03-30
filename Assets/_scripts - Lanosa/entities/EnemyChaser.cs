@@ -19,7 +19,6 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
     [SerializeField] private GameObject bloodPrefab;
     [SerializeField] private Animator _animator;
     [SerializeField] private BoxCollider attackArea;
-
     [SerializeField] private TargetChaser _chaser;
     [SerializeField] private EnemySpawner _originSpawner;
 
@@ -86,7 +85,6 @@ public class EnemyChaser : Entity, IAttacker, IMovable, IRagdoll
 
         Destroy(this.gameObject, 3f);
     }
-
 
     public void Move()
     {

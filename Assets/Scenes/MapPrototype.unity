@@ -13421,6 +13421,11 @@ PrefabInstance:
       propertyPath: id
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7579859169016641478, guid: 573e90163b068704aabf87a4f1422e11,
+        type: 3}
+      propertyPath: interactsWith.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 7579859169016641479, guid: 573e90163b068704aabf87a4f1422e11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18760,6 +18765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: id
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579859169016641478, guid: 573e90163b068704aabf87a4f1422e11,
+        type: 3}
+      propertyPath: interactsWith.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 7579859169016641479, guid: 573e90163b068704aabf87a4f1422e11,
         type: 3}
@@ -26451,6 +26461,11 @@ PrefabInstance:
       propertyPath: levelSceneManager
       value: 
       objectReference: {fileID: 1835355712}
+    - target: {fileID: 7579859169016641478, guid: 573e90163b068704aabf87a4f1422e11,
+        type: 3}
+      propertyPath: interactsWith.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 7579859169016641479, guid: 573e90163b068704aabf87a4f1422e11,
         type: 3}
       propertyPath: m_LocalPosition.x

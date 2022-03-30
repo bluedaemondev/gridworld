@@ -14,6 +14,7 @@ public class SoundLibrarySO : ScriptableObject
     public AudioClip attackSoundPlayer;
     public AudioClip attackSoundShooter;
     public AudioClip attackSoundSummoner;
+    public AudioClip attackSoundGuard;
 
     public AudioClip punchSoundImpact;
 
@@ -24,6 +25,7 @@ public class SoundLibrarySO : ScriptableObject
     public AudioClip dyingEnemyChaser;
     public AudioClip dyingEnemyShooter;
     public AudioClip dyingEnemySummoner;
+    public AudioClip dyingEnemyGuard;
     public AudioClip dyingPlayer;
 
     public AudioClip healPickupSound;
